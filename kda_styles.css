@@ -1,0 +1,217 @@
+:root {
+        --color-1-orange: #FB6410;
+        --color-2-blue: #22B4E2;
+        --color-3-yellowish: #F5AB3C;
+        --color-4-headings: #232D46; 
+        --border-radius: .5rem;
+}
+
+/*LAYOUT*/
+.container1420 {
+    max-width: 1420px;
+    margin: 0 auto;
+}
+
+html {
+    /* 62.5% of 16px = 10px */
+    font-size: 100%;
+}
+
+/* ------------------------------------------------------------- */
+/* LISTs SECTION (no bullets) */
+.list {
+    list-style: none;
+    padding-left: 0;
+} /* also for vertical lists */
+
+/* horizontal lists */
+.list--inline .list__item {
+    display: inline-block;
+    margin-right: 2rem;
+}
+
+/* ------------------------------------------------------------- */
+/* BUTTONS SECTION  */
+
+.button {
+    background: none;
+    border-radius: var(--border-radius);
+    border: 3px solid transparent;
+    color: #000;
+    font-weight: bold;
+    padding: .5rem 1.5rem;
+    width: 10rem;
+}
+.button:hover {
+    cursor: pointer;
+    background: var(--color-1-orange);
+    color: white;
+}
+.button:active {
+    color: black;
+    background: white;
+}
+
+.button--nav {
+    background-color:transparent;
+    border: 2px dashed white;
+    color:var(--color-1-orange);
+    display: flex;
+    font-size: 2rem;
+    justify-content: center;
+    margin: 0;
+    padding: .3rem 0;
+    width: auto; /* stretches the content in each block in the flex */
+}
+.button--nav:hover {
+    background-color:var(--color-1-orange);
+    color: white;
+}
+.button--nav:active {
+    color:black;
+}
+
+.button--nav>p, .button--nav>div { 
+    padding: 0 1rem;
+    align-self: baseline;
+}
+.button--nav>p {
+    font-size: 1.2rem;
+    text-decoration: line-through;
+    opacity: 50%;
+    margin: 0;
+}
+
+.button--1orange {
+    border-color: var(--color-1-orange);
+    color: var(--color-1-orange);
+}
+
+.button--2blue {
+    border-color: var(--color-2-blue);
+    color:var(--color-2-blue);
+}
+.button--2blue:hover {
+    background: var(--color-2-blue);
+    color: white;
+}
+.button--2blue:active {
+    background: none;
+    color: black;
+}
+
+.button--3yellow {
+    border-color: var(--color-3-yellowish);
+    background: white;
+    color:var(--color-3-yellowish);
+}
+.button--3yellow:hover {
+    background:var(--color-3-yellowish);
+    color: white;
+}
+.button--3yellow:active {
+    color: black;
+    background-color: white;
+}
+
+.button--4orangeBG {
+    background: var(--color-1-orange);
+    color: white;
+    border-color:var(--color-1-orange);
+}
+
+.button--stretched {
+    width: 100%;
+    display: inline-block;
+    border-color: var(--color-1-orange);
+    border-radius: 50px;
+    color: white;
+    background: var(--color-1-orange);
+}
+
+.button--4orangeBG:hover, .button--stretched:hover {
+    background: white;
+    color:var(--color-1-orange);
+}
+
+.button--4orangeBG:active, .button--stretched:active {
+    color:black;
+    background: var(--color-1-orange);
+}
+
+.button--pictures {
+    border: 2px solid white;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    width: auto;
+    border-radius: 0;
+}
+
+.button--news {
+    color:var(--color-2-blue);
+    border: 1.5px solid var(--color-2-blue);
+    width: auto;
+    display: flex;
+    padding: 0;
+    align-items: center;
+}
+.button--news:hover {
+    background: var(--color-2-blue);
+    color: white;
+}
+.button--news:active {
+    background: none;
+    color: black;
+}
+
+/* ------------------------------------------------------------- */
+/* NAVIGATION BAR SECTION*/
+.nav {
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 1rem;
+    align-items: center;
+}
+
+.nav__item > a {
+    color: #d2d0db;
+    transition: color 0.3s;
+}
+
+/* ------------------------------------------------------------- */
+/* ICONS */
+.icon {
+    width: 40px;
+    height: 40px;
+}
+
+.icon--small {
+    width: 30px;
+    height: 30px;
+}
+
+.icon--primary {
+    fill:var(--color-1-orange);
+}
+
+.icon--white {
+    fill: #fff;
+}
+
+/* ------------------------------------------------------------- */
+/* NEWS SECTION */
+
+
+.news__img {
+    padding: 1rem 1rem;
+}   
+
+.news__body {
+    margin: 0;
+    padding: 1rem 1rem 1rem 0;
+    text-align: left;
+}
+
