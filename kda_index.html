@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KDAcademy</title>
+    <!-- FONTs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="kda_styles.css"/>
     <link rel="stylesheet" href="normalize.css"/>
@@ -35,8 +39,8 @@
     </nav>
 
  
-    <button class="button button--2blue">Previous news</button>
-    <button class="button button--1orange">Unlimited!</button>
+
+   
     <button class="button button--3yellow">8 lessons!</button>
     <button class="button button--3yellow">1 lesson</button>
     <button class="button button--4orangeBG">Schedule & Instructors</button>
@@ -46,21 +50,92 @@
         <svg class="icon icon--white"> <use href="/icons/menu.svg"> </use>  </svg>
     </button>
    
-    <section class="container1420">
-        <h2>News</h2>
-        <button class="button--news">
-            <div class="news__img">
-                <picture>
-                    <img src="images/dancer@1x.png" alt="kenta instructor">
-                </picture>
+    <section class="container1420 card__news">
+        <h2 class="news__title">News</h2>
+        <div class="grid grid--cols2">
+
+                <button class="button--news2 grid grid--cols2">
+                
+                    <div class="news__img">
+                        <picture>
+                            <img src="images/dancer@1x.png" alt="kenta instructor">
+                        </picture>
+                    </div>
+                    <a href="#">
+                    <div class="news__body">
+                        <h5>2022.03.01</h5>
+                        <p> Kenta's workshop on</p>
+                        <h3>2022.03.23</h3>
+                    </div>
+                    </a>
+                
+                </button>
+        
+            <button class="button--news2 grid grid--cols2">
+                <div class="news__img">
+                    <picture>
+                        <img src="images/dancer@1x.png" alt="kenta instructor">
+                    </picture>
+                </div>
+                <div class="news__body">
+                    <a>
+                    <h5>2022.03.01</h5>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit hic fuga voluptatem ut exercitationem quo autem, accusantium facilis odio aliquam magni ducimus quibusdam architecto aspernatur nobis, corporis nisi eaque deleniti voluptate consectetur velit? Quasi, illum. Animi, quam. Debitis, nemo facilis?</p>
+                    </a>
+                </div>
+            </button>
+
+            <button class="button--news2 grid grid--cols2">
+                <div class="news__img">
+                    <picture>
+                        <img src="images/dancer@1x.png" alt="kenta instructor">
+                    </picture>
+                </div>
+                <div class="news__body">
+                    <h5>2022.03.01</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt ullam, exercitationem ipsa in, saepe, hic inventore quod ducimus eius facilis accusantium? Porro, voluptatem. Quis laboriosam aliquid dolorem assumenda voluptatibus officiis.</p>
+                </div>
+            </button>
+
+            <button class="button--news2 grid grid--cols2">
+                <div class="news__img">
+                    <picture>
+                        <img src="images/dancer@1x.png" alt="kenta instructor">
+                    </picture>
+                </div>
+                <div class="news__body">
+                    <h5>2022.03.01</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt ullam, exercitationem ipsa in, saepe, hic inventore quod ducimus eius facilis accusantium? Porro, voluptatem. Quis laboriosam aliquid dolorem assumenda voluptatibus officiis.</p>
+                </div>
+            </button>
             </div>
-            <div class="news__body">
-                <h5>2022.03.01</h5>
-                <p> Kenta's workshop on</p>
-                <h3>2022.03.23</h3>
-            </div>
-        </button>
+        <button class="button button--2blue" id="news__button">Previous news</button>
     </section>
+
+
+    <section class="block block--dark block--skewed-left">
+        <section class="card__container">
+            <div class="grid grid--rows3">
+                <div class="card__head">
+                    <h3>Monthly</h3>
+                    <span>¥12,000</span> 
+                    <span>/月</span>
+                </div>
+
+                <div class="card__body">
+                    <p>
+                        Unlimited access to all classes anywhere.
+                    </p>
+                </div>
+
+                <div>
+                    <button class="button button--1orange">Unlimited!</button>
+                </div>
+            </div>
+        </section>
+    </section>
+
+
 
 
 </body>
