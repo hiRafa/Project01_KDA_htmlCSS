@@ -1,14 +1,20 @@
 :root {
-        --color-1-orange: #FB6410;
-        --color-2-blue: #22B4E2;
-        --color-3-yellowish: #F5AB3C;
-        --color-4-headings: #232D46; 
-        --color-body: #918ca4;
-        --border-radius: .5rem;
+    --color-1-orange: #FF7021;
+    --color-2-blue: #2FF7F0;
+    --color-3-yellowish: #FFA714;
+    --color-4-headings: #232D46; 
+    --color-body: #918ca4;
+
+    --color-lowerbrightness: brightness(.95);
+    --color-lowersaturate: saturate(.8);
+    --color-imgbrightness: brightness(.7); 
+    --border-radius: .5rem;
+    --icon-border: 2px solid black;
 }
 
 *, *::after, *::before {
     box-sizing: border-box;
+
 }
 
 /*LAYOUT*/
@@ -38,6 +44,10 @@ body {
 
 p {
     margin:0;
+}
+
+h1, h2, h3 {
+    margin: 0;
 }
 
 /* ------------------------------------------------------------- */
@@ -155,6 +165,7 @@ p {
 .button--4orangeBG:hover, .button--stretched:hover {
     background: white;
     color:var(--color-1-orange);
+    border-color: white;
 }
 
 .button--4orangeBG:active, .button--stretched:active {
@@ -205,6 +216,16 @@ p {
 }
 
 /* ------------------------------------------------------------- */
+/* BADGE SECTION*/
+
+.badge {
+    text-align: center;
+    width: 100px;
+    white-space: nowrap;
+}
+
+
+/* ------------------------------------------------------------- */
 /* NAVIGATION BAR SECTION*/
 .nav {
     background: black;
@@ -221,24 +242,36 @@ p {
 }
 
 /* ------------------------------------------------------------- */
-/* ICONS */
+/* ICONS SECTION */
 .icon {
-    width: 40px;
-    height: 40px;
+    font-size: 3rem;
+    border-radius: 50%;
+    padding: .3rem;
 }
 
-.icon--small {
-    width: 30px;
-    height: 30px;
+.icon-container {
+    background: #f3f9fa;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display:inline-flex;
+    justify-content: center; /* horizontal axis */
+    align-items: center; /* vertical axis */
 }
 
-.icon--primary {
-    fill:var(--color-1-orange);
+.icon--2blue {
+    color:var(--color-2-blue);
+    border:var(--icon-border);
+    border-color: var(--color-2-blue);
 }
 
-.icon--white {
-    fill: #fff;
+.icon--headings {
+    color:var(--color-4-headings);
+    border:var(--icon-border);
+    border-color: var(--color-4-headings);
 }
+
+
 
 /* ------------------------------------------------------------- */
 /* NEWS SECTION */
@@ -288,34 +321,114 @@ p {
     border-radius: var(--border-radius);
 }
 
+.card__head,
+.card__body {
+    padding: 2rem 2rem;
+    position: relative;
+}
+
 .card__head {
     background: var(--color-1-orange);
     border-top-right-radius: var(--border-radius);
     border-top-left-radius: var(--border-radius);
-
     font-size: 2rem;
+    padding-top: 2.5rem; 
 }
 
-.card__head,
-.card__body {
-    padding: 1rem;
+.card__price {
+    font-size: 3.5rem;
+    font-weight: bold;
 }
 
-.card__container h3,
-.card__container span {
+.card__head h3,
+.card__head span {
     margin: 0;
     color: white;
-    font-weight: bold;
 }
 
 .card__container button {
     display:block;
     margin: 1rem auto;
+    margin-top: 1rem;
     width: 80%;
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    border: 5px solid var(--color-1-orange);
 }
 
-.card__container .grid--rows3 {
-    row-gap: 0;
+.card__popular .card__head::before {
+    content: url("icons/Best10.png");
+    width: 40px;
+    display: inline-block;
+    position: absolute;
+    top: -20px;
+    right: 10%;
+    transform: rotate(-10deg);
+}
+
+.card__badge {
+    right: 5%;
+    top: -20px;
+    position: absolute;
+    border-radius: 50px;
+    padding: .5rem 1rem;
+    filter: var(--color-lowerbrightness) var(--color-lowersaturate);
+    color: white;
+    background:var(--color-1-orange);
+}
+
+/* ------------------------------------------------------------- */
+/* CARD STYLES SECTION */
+
+.card--dstyles__container {
+    max-width: 320px;
+    height: 420px;
+    justify-content: center;
+    background: white;
+    border-radius: var(--border-radius);
+}
+
+.card--dstyles__head {
+    background:var(--color-4-headings);
+    border-top-right-radius: var(--border-radius);
+    border-top-left-radius: var(--border-radius);
+    font-size: 2rem;
+    text-align: center;
+    color: white;
+}
+
+.card--dstyles__body {
+    position: relative;
+}
+
+.card--dstyles__body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("images/capoeira_matheus-natan.jpg");
+    background-size: cover;
+    opacity: 1;
+    filter:var(--color-imgbrightness) var(--color-lowersaturate);
+}
+
+.card--dstyles__body ul {
+    padding: 2rem 2rem;
+    position: absolute;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.card--dstyles__body button {
+    position: absolute;
+    bottom: 5%;
+    right: 18%;
+    letter-spacing: .1rem;
+    font-size: 1.2rem;
+    width: 200px;
 }
 
 /* ------------------------------------------------------------- */
@@ -328,13 +441,13 @@ p {
     width: 100%;
     height: 100%;
 }
-
-.grid .grid--rows3 {
-    flex-grow: 1;
+.grid--rows2 {
+    grid-template-rows: 20% 80%;
+    row-gap: 0;
+}
+.grid--rows3 {
     grid-template-rows: 40% 40% 20%;
-    grid-template-columns: auto;
-    height: 100%;
-    justify-self: center;
+    row-gap: 0;
 }
 
 @media screen and (min-width: 768px) {
@@ -366,3 +479,8 @@ p {
     clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
     padding-bottom: calc(var(--padding-vertical) + 4rem);
 }
+
+/* ------------------------------------------------------------- */
+/*  */
+
+
