@@ -4,11 +4,11 @@
     --color-3-yellowish: #FFA714;
     --color-4-headings: #232D46; 
     --color-body: #918ca4;
-
     --color-lowerbrightness: brightness(.95);
     --color-lowersaturate: saturate(.8);
     --color-imgbrightness: brightness(.7); 
     --border-radius: .5rem;
+    --border-radius-strong: 1.5rem;
     --icon-border: 2px solid black;
 }
 
@@ -21,6 +21,12 @@
 .container1420 {
     max-width: 1420px;
     margin: 0 auto;
+}
+
+.containerfull {
+    height: 1200px;
+    max-height: 1200px;
+    margin: 10rem 0;
 }
 
 /* ------------------------------------------------------------- */
@@ -154,23 +160,30 @@ h1, h2, h3 {
 }
 
 .button--stretched {
-    width: 100%;
-    display: inline-block;
+    background: var(--color-1-orange);
     border-color: var(--color-1-orange);
     border-radius: 50px;
     color: white;
-    background: var(--color-1-orange);
+    display: inline;
+    text-align: center;
+    width: 57%;
+    padding: .4rem .3rem;
+}
+.button--stretched p {
+    padding: 0 1rem;
+    display: inline;
 }
 
 .button--4orangeBG:hover, .button--stretched:hover {
     background: white;
-    color:var(--color-1-orange);
-    border-color: white;
+    color:var(--color-2-blue);
+    border-color: var(--color-2-blue);
 }
 
 .button--4orangeBG:active, .button--stretched:active {
     color:black;
     background: var(--color-1-orange);
+    border-color: black;
 }
 
 .button--pictures {
@@ -259,6 +272,12 @@ h1, h2, h3 {
     align-items: center; /* vertical axis */
 }
 
+.icon--1orange {
+    color:var(--color-1-orange);
+    border:var(--icon-border);
+    border-color:var(--color-1-orange);
+}
+
 .icon--2blue {
     color:var(--color-2-blue);
     border:var(--icon-border);
@@ -271,6 +290,11 @@ h1, h2, h3 {
     border-color: var(--color-4-headings);
 }
 
+.icon--white {
+    color: white;
+    border:var(--icon-border);
+    border-color:white;
+}
 
 
 /* ------------------------------------------------------------- */
@@ -390,8 +414,7 @@ h1, h2, h3 {
 
 .card--dstyles__head {
     background:var(--color-4-headings);
-    border-top-right-radius: var(--border-radius);
-    border-top-left-radius: var(--border-radius);
+    border-top-left-radius: var(--border-radius-strong);
     font-size: 2rem;
     text-align: center;
     color: white;
@@ -399,6 +422,7 @@ h1, h2, h3 {
 
 .card--dstyles__body {
     position: relative;
+
 }
 
 .card--dstyles__body::before {
@@ -410,8 +434,8 @@ h1, h2, h3 {
     bottom: 0;
     background-image: url("images/capoeira_matheus-natan.jpg");
     background-size: cover;
-    opacity: 1;
     filter:var(--color-imgbrightness) var(--color-lowersaturate);
+    border-bottom-right-radius:var(--border-radius-strong);
 }
 
 .card--dstyles__body ul {
@@ -430,6 +454,56 @@ h1, h2, h3 {
     font-size: 1.2rem;
     width: 200px;
 }
+
+/* CARDS STUDIOS SECTION */
+.card--studios__container{
+    position: relative;
+    justify-items: center;
+    align-items: center;
+}
+
+.card--studios__container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("images/dance_studio@1x.png");
+    background-size: cover;
+    filter:var(--color-imgbrightness) var(--color-lowersaturate);
+    border-bottom-right-radius:var(--border-radius-strong);
+    border-top-left-radius:var(--border-radius-strong);
+}
+
+.card--studios__container h2 {
+    padding-top: 2rem;
+    position: relative;
+    color: white;
+    opacity: .7;
+}
+
+.card--studios__container button {
+    position: relative;
+}
+
+.card--studios__container .icon {
+    font-size: 1rem;
+    border-radius: 50%;
+    padding: .2rem;
+}
+
+.card--studios__container.grid {
+    width: 440px;
+    height: 210px;
+}
+
+.card--studios__container.grid--rows2 {
+    grid-template-rows: 60% 40%;
+}
+
+
+
 
 /* ------------------------------------------------------------- */
 /* GRIDS SECTION */
@@ -481,6 +555,15 @@ h1, h2, h3 {
 }
 
 /* ------------------------------------------------------------- */
-/*  */
+/*  GALLERY SECTION */
 
+.gallery {
+    background: url(images/dance_gallery.png);
+    background-repeat:no-repeat;
+    background-size: 100% auto;
+    position:relative;
+}
+
+/* ------------------------------------------------------------- */
+/* FOOTER SECTION */
 
