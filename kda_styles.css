@@ -1,8 +1,8 @@
 :root {
-    --color-1-orange: #FF7021;
-    --color-2-blue: #2FF7F0;
-    --color-3-yellowish: #FFA714;
-    --color-4-headings: #232D46; 
+    --color-1-orange: #F27618;
+    --color-2-blue: #18D9F2;
+    --color-3-yellowish: #F9AE0C;
+    --color-4-headings: #0093A6; 
     --color-body: #918ca4;
     --color-lowerbrightness: brightness(.95);
     --color-lowersaturate: saturate(.8);
@@ -21,12 +21,15 @@
 .container1420 {
     max-width: 1420px;
     margin: 0 auto;
+    position: relative;
+    height: 100%;
+ 
 }
 
 .containerfull {
     height: 1200px;
-    max-height: 1200px;
-    margin: 10rem 0;
+    max-height: 800px;
+    position: relative;
 }
 
 /* ------------------------------------------------------------- */
@@ -48,12 +51,78 @@ body {
     color: var(--color-body);
 }
 
-p {
-    margin:0;
+h1, h2, h3, h4, h5, p {
+    margin: 0 0;
+    line-height: 1.3;
+    color: 1px;
 }
 
-h1, h2, h3 {
-    margin: 0;
+h1 {
+    font-size: 5rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+h4, h5 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+p {
+    margin-top: 0;
+}
+
+/* bootstrap and tailwind use standard of 1024px */
+@media screen and (min-width: 1024px) {
+    h1 {
+        font-size: 6rem;
+    }
+    h2 {
+        font-size: 4rem;
+    }
+    h3 {
+        font-size: 3rem;
+    }    
+    h4, h5 {
+        font-size: 1.5rem;
+    }
+}
+
+/* ------------------------------------------------------------- */
+/* LINKS */
+
+a {
+    text-decoration: none;
+}
+
+.link-arrow {
+    color: var(--color-accent);
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.link-arrow::after {
+    content: '-->';
+    margin-left: 5px;
+    transition: margin 0.15s;
+}
+
+.link-arrow:hover::after {    /* this style is applied to the arrow created above */
+    margin-left: 10px;
+}
+
+@media screen and (min-width: 1024px) {
+    .link-arrow {
+        font-size: 1.7rem;
+    }
 }
 
 /* ------------------------------------------------------------- */
@@ -70,6 +139,25 @@ h1, h2, h3 {
 }
 
 /* ------------------------------------------------------------- */
+/*  COLLAPSIBLE SECTION */
+
+.collapsible__content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.collapsible--expanded .collapsible__chevron {
+    transform: rotate(0);
+}
+.collapsible--expanded .collapsible__content {
+    max-height: 100vh; /*viewport height */
+    opacity: 1;
+}
+
+
+/* ------------------------------------------------------------- */
 /* BUTTONS SECTION  */
 
 .button {
@@ -77,6 +165,7 @@ h1, h2, h3 {
     border-radius: var(--border-radius);
     border: 3px solid transparent;
     color: #000;
+    font-size: 1.5rem;
     font-weight: bold;
     padding: .5rem 1.5rem;
     width: 10rem;
@@ -91,36 +180,6 @@ h1, h2, h3 {
     background: white;
 }
 
-.button--nav {
-    background-color:transparent;
-    border: 2px dashed white;
-    color:var(--color-1-orange);
-    display: flex;
-    font-size: 2rem;
-    justify-content: center;
-    margin: 0;
-    padding: .3rem 0;
-    width: auto; /* stretches the content in each block in the flex */
-}
-.button--nav:hover {
-    background-color:var(--color-1-orange);
-    color: white;
-}
-.button--nav:active {
-    color:black;
-}
-
-.button--nav>p, .button--nav>div { 
-    padding: 0 1rem;
-    align-self: baseline;
-}
-.button--nav>p {
-    font-size: 1.2rem;
-    text-decoration: line-through;
-    opacity: 50%;
-    margin: 0;
-}
-
 .button--1orange {
     border-color: var(--color-1-orange);
     color: var(--color-1-orange);
@@ -129,6 +188,7 @@ h1, h2, h3 {
 .button--2blue {
     border-color: var(--color-2-blue);
     color:var(--color-2-blue);
+    width: 15rem;
 }
 .button--2blue:hover {
     background: var(--color-2-blue);
@@ -140,7 +200,7 @@ h1, h2, h3 {
 }
 
 .button--3yellow {
-    border-color: var(--color-3-yellowish);
+    border-color:var(--color-3-yellowish);
     background: white;
     color:var(--color-3-yellowish);
 }
@@ -195,38 +255,8 @@ h1, h2, h3 {
     border-radius: 0;
 }
 
-.button--news {
-    border: 1.5px solid var(--color-2-blue);
-    color:var(--color-2-blue);
-    display: flex;
-    height: 200px;
-    padding: 0;
-    width: 500px;
-}
-.button--news:hover {
-    background: var(--color-2-blue);
-    color: white;
-}
-.button--news:active {
-    background: none;
-    color: black;
-}
 
-.button--news2 {
-    border: 1.5px solid var(--color-2-blue);
-    color:var(--color-2-blue);
-    height: 200px;
-    padding: 0;
-    width: 500px;
-}
-.button--news2:hover {
-    background: var(--color-2-blue);
-    color: white;
-}
-.button--news2:active {
-    background: none;
-    color: black;
-}
+
 
 /* ------------------------------------------------------------- */
 /* BADGE SECTION*/
@@ -237,27 +267,15 @@ h1, h2, h3 {
     white-space: nowrap;
 }
 
-
-/* ------------------------------------------------------------- */
-/* NAVIGATION BAR SECTION*/
-.nav {
-    background: black;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 0 1rem;
-    align-items: center;
-}
-
-.nav__item > a {
-    color: #d2d0db;
-    transition: color 0.3s;
-}
-
 /* ------------------------------------------------------------- */
 /* ICONS SECTION */
 .icon {
     font-size: 3rem;
+    border-radius: 50%;
+    padding: .3rem;
+}
+.icon-smaller {
+    font-size: 2rem;
     border-radius: 50%;
     padding: .3rem;
 }
@@ -296,44 +314,266 @@ h1, h2, h3 {
     border-color:white;
 }
 
+/* ------------------------------------------------------------- */
+/* GRIDS SECTION */
+
+.grid {
+    display: grid;
+    row-gap: 1rem;
+    column-gap: 1rem;
+    width: 100%;
+    height: 100%;
+}
+.grid--rows2 {
+    grid-template-rows: 20% 80%;
+    row-gap: 0;
+}
+.grid--rows3 {
+    grid-template-rows: 40% 40% 20%;
+    row-gap: 0;
+}
+.gridouter {
+    display: grid;
+    row-gap: 1rem;
+    column-gap: 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .gridouter--cols2{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .grid--cols3{
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        justify-items: center;
+    }
+}
+
+/* ------------------------------------------------------------- */
+/* BLOCKS SECTION*/
+.block {
+    --padding-vertical: 6rem;
+    padding: var(--padding-vertical) 2rem;
+}
+
+.block--dark {
+    background: black;
+    color: grey;
+}
+
+.block--skewed-left {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
+    padding-bottom: calc(var(--padding-vertical) + 4rem);
+}
+
+/* ------------------------------------------------------------- */
+/* NAVIGATION BAR SECTION*/
+.nav {
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 1rem;
+    align-items: center;
+}
+
+.nav__list {
+    width: 100%;
+    margin: 0;
+}
+
+
+.nav__item {
+    padding: 0.5rem 2rem;
+    border-bottom: 1px solid #222;
+    font-size: 1.2rem;
+}
+.nav__item > a {
+    color: #d2d0db;
+    transition: color 0.3s;
+}
+.nav__item > a:hover {
+    color: #fff;
+}
+
+
+.nav__toggler{
+    opacity: .5;
+    transition: box-shadow .15s;
+    cursor: pointer;
+}
+.nav.collapsible--expanded .nav__toggler { /*double class selection just to make sure that this style only applies to the expanded navigation bar and it wont be applied to anything else */
+    opacity: 1;
+    box-shadow: 0 0 0 3px #666;
+    border-radius: 5px;
+    border-radius: 50%;
+}
+
+
+.nav__brand {
+    transform: translateY(5px);
+}
+
+@media screen and (min-width: 850px){
+    .nav__toggler {
+        display: none;
+    }
+
+    .nav__list {
+        width: auto;
+        display: flex;
+        font-size: 1.4rem;
+        max-height: 100%;
+        opacity: 1;
+    }
+
+    .nav__item {
+        border: none;
+    }
+}
+
+/* ------------------------------------------------------------- */
+/* BANNER SECTION */
+.banner__bg::before {
+    content: '';
+    background: url(images/dance_banner.jpg);
+    position: absolute;
+    background-repeat:no-repeat;
+    background-size: 1200px auto;
+    filter:var(--color-lowersaturate) var(--color-imgbrightness);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.banner__content {
+    color:white;
+}
+.banner__content-right {
+    align-self:flex-end;
+    text-align: right;
+}
+.banner__content-right .button {
+    float: right;
+}
+.banner__content.grid--rows2 {
+    padding: 2rem 1rem;
+}
+
+.button--banner {
+    background-color:transparent;
+    border: 2px dashed white;
+    color:var(--color-1-orange);
+    display: flex;
+    font-size: 4rem;
+    justify-content: center;
+    margin: 0;
+    padding: .3rem 0;
+    width: auto; /* stretches the content in each block in the flex */
+}
+.button--banner:hover {
+    background-color:var(--color-1-orange);
+    color: white;
+}
+.button--banner:active {
+    color:black;
+}
+
+.button--banner>p, .button--banner>div { 
+    padding: 0 1rem;
+    align-self: baseline;
+}
+.button--banner>p {
+    font-size: 2.5rem;
+    text-decoration: line-through;
+    opacity: 50%;
+}
+
+@media screen and (min-width: 1220px) {
+    .banner__bg::before {
+        background-size: 100% auto;
+    }
+
+}
+
+/* ------------------------------------------------------------- */
+/* GALLERY SECTION */
+.gallery {
+    background: url(images/dance_gallery.png);
+    background-size: 100% auto;
+}
+
+/* ------------------------------------------------------------- */
+/*  Full Background SECTION */
+
+.background::before {
+    background-repeat:no-repeat;
+    filter:var(--color-lowersaturate) var(--color-imgbrightness);
+}
 
 /* ------------------------------------------------------------- */
 /* NEWS SECTION */
 .card__news {
-    border-radius: 7px;
+    border-radius: .5rem;
     box-shadow: 0 0 20px 10px #f3f3f3;
+    color:var(--color-2-blue);
     padding: 2rem 2rem;
     margin: 3rem auto;
     text-align: center; /* justify items doesnt work, because it considers everything inside the container (not a flexbox container, but a normal container) as text */
 }
-
-.card__news .grid {
-    margin: 1.5rem auto;
+.card__news .gridouter {
+    margin: 2rem auto;
     text-overflow: ellipsis;
     overflow: hidden;
 }
 
-.news__title {
-    margin-top: 0;
+.eachnews__grid--cols2 {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 100%;
+    align-items: center;
+    border: 2px solid var(--color-2-blue);
+    color:var(--color-2-blue);
+}
+.eachnews__grid--cols2:hover {
+    background: var(--color-2-blue);
+    color: white;
+    cursor: pointer;
+}
+.eachnews__grid--cols2:active {
+    background: none;
+    color: black;
 }
 
-.news__img {
-    padding: 1rem 0 1rem 1rem;
-    align-self: center;
+.news__img > img { /* if we use .news__image only it will shrink the container div, but not the image itself, thefore we need to target the img */
+    max-height: 200px;
+    max-width: 300px;
+    width: 100%;
+    padding: 1rem;
 }   
 
 .news__body {
-    flex-grow: 1;
     overflow: hidden;
     margin: 1rem 1rem 1rem 0;
     text-align:start;
-}
-.news__body h5,
-.news__body p,
-.news__body h3 {
-    margin: 0;
+    align-self: flex-start;
 }
 
+.news__body h4 {
+    line-height: 1.4;
+    color:var(--color-3-yellowish);
+}
+
+@media screen and (min-width: 768px) {
+    .news__img > img {
+        max-width: 300px;
+    }
+}
 
 /* ------------------------------------------------------------- */
 /* CARD SECTION */
@@ -343,6 +583,10 @@ h1, h2, h3 {
     justify-content: center;
     background: white;
     border-radius: var(--border-radius);
+}
+.popular {
+    max-width: 450px;
+    height: 550px;
 }
 
 .card__head,
@@ -389,6 +633,8 @@ h1, h2, h3 {
     right: 10%;
     transform: rotate(-10deg);
 }
+
+
 
 .card__badge {
     right: 5%;
@@ -505,64 +751,6 @@ h1, h2, h3 {
 
 
 
-/* ------------------------------------------------------------- */
-/* GRIDS SECTION */
-
-.grid {
-    display: grid;
-    row-gap: 1rem;
-    column-gap: 1rem;
-    width: 100%;
-    height: 100%;
-}
-.grid--rows2 {
-    grid-template-rows: 20% 80%;
-    row-gap: 0;
-}
-.grid--rows3 {
-    grid-template-rows: 40% 40% 20%;
-    row-gap: 0;
-}
-
-@media screen and (min-width: 768px) {
-    .grid--cols2{
-        grid-template-columns: repeat(2, 1fr);
-        width: 100%;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    .grid--cols3{
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* ------------------------------------------------------------- */
-/* BLOCKS SECTION*/
-.block {
-    --padding-vertical: 6rem;
-    padding: var(--padding-vertical) 2rem;
-}
-
-.block--dark {
-    background: black;
-    color: grey;
-}
-
-.block--skewed-left {
-    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
-    padding-bottom: calc(var(--padding-vertical) + 4rem);
-}
-
-/* ------------------------------------------------------------- */
-/*  GALLERY SECTION */
-
-.gallery {
-    background: url(images/dance_gallery.png);
-    background-repeat:no-repeat;
-    background-size: 100% auto;
-    position:relative;
-}
 
 /* ------------------------------------------------------------- */
 /* FOOTER SECTION */
