@@ -6,7 +6,7 @@
     --color-body: #0093A6;
     --color-lowerbrightness: brightness(.95);
     --color-lowersaturate: saturate(.8);
-    --color-imgbrightness: brightness(.7); 
+    --color-imgbrightness: brightness(.5); 
     --border-radius: .5rem;
     --border-radius-strong: 1.5rem;
     --icon-border: 2px solid black;
@@ -105,10 +105,22 @@ p {
 
 /* ------------------------------------------------------------- */
 /* LINKS */
-
+/* a:hover MUST come after a:link and a:visited
+a:active MUST come after a:hover */
 a {
     text-decoration: none;
+    color:white;
 }
+a:visited {
+    color:var(--color-1-orange);
+}
+a:hover {
+    color:var(--color-2-blue);
+}
+a:active {
+    color: black;
+}
+
 
 .link-arrow {
     color: var(--color-accent);
@@ -138,6 +150,7 @@ a {
 .list {
     list-style: none;
     padding-left: 0;
+    margin: 0;
 } /* also for vertical lists */
 
 /* horizontal lists */
@@ -182,16 +195,19 @@ a {
     cursor: pointer;
     background: var(--color-1-orange);
     color: white;
+    border-color:var(--color-1-orange);
 }
 .button:active {
     color: black;
     background: white;
 }
 
+
 .button--1orange {
     border-color: var(--color-1-orange);
     color: var(--color-1-orange);
 }
+
 
 .button--2blue {
     border-color: var(--color-2-blue);
@@ -201,11 +217,13 @@ a {
 .button--2blue:hover {
     background: var(--color-2-blue);
     color: white;
+    border-color:var(--color-2-blue);
 }
 .button--2blue:active {
     background: none;
     color: black;
 }
+
 
 .button--3yellow {
     border-color:var(--color-3-yellowish);
@@ -215,42 +233,38 @@ a {
 .button--3yellow:hover {
     background:var(--color-3-yellowish);
     color: white;
+    border-color:var(--color-3-yellowish);
 }
 .button--3yellow:active {
     color: black;
     background-color: white;
 }
 
+
 .button--4orangeBG {
     background: var(--color-1-orange);
     color: white;
     border-color:var(--color-1-orange);
 }
-
 .button--stretched {
     background: var(--color-1-orange);
     border-color: var(--color-1-orange);
     border-radius: 50px;
     color: white;
-    display: inline;
     text-align: center;
-    width: 57%;
+    width: 75%;
     padding: .4rem .3rem;
 }
 .button--stretched p {
     padding: 0 1rem;
-    display: inline;
+    display: inline-block;
 }
-
 .button--4orangeBG:hover, .button--stretched:hover {
-    background: white;
-    color:var(--color-2-blue);
-    border-color: var(--color-2-blue);
+     border-color: var(--color-2-blue);
+    background-color: var(--color-2-blue);
 }
-
 .button--4orangeBG:active, .button--stretched:active {
     color:black;
-    background: var(--color-1-orange);
     border-color: black;
 }
 
@@ -279,6 +293,7 @@ a {
     font-size: 2.3rem;
     border-radius: 50%;
     padding: .2rem;
+
 }
 .icon-small {
     font-size: 2rem;
@@ -315,7 +330,6 @@ a {
 }
 
 .icon--white {
-    color: white;
     border:var(--icon-border);
     border-color:white;
 }
@@ -331,7 +345,7 @@ a {
     height: 100%;
 }
 .grid--rows2 {
-    grid-template-rows: 20% 80%;
+    grid-template-rows: 20% auto;
     row-gap: 0;
 }
 .grid--rows3 {
@@ -344,8 +358,16 @@ a {
     column-gap: 1rem;
     width: 100%;
     height: 100%;
+}
+.gridouter, .grid--cols3, .grid--cols5 {
     justify-content: center;
     justify-items: center;
+    align-items: center;
+}
+.grid--cols5 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    column-gap: 0.5rem;
+    grid-template-rows: repeat(auto-fit, minmax(420px, 1fr));
 }
 
 /* ------------------------------------------------------------- */
@@ -373,11 +395,10 @@ a {
 }
 
 @media screen and (min-width: 1024px) {
-    .grid--cols3{
+    .grid--cols3 {
         grid-template-columns: repeat(3, 1fr);
-        align-items: center;
-        justify-items: center;
     }
+   
     .block--skewed-left {
         clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 60% 90%, 50% 100%, 40% 90%, 0 90%);
         clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 50% 100%, 0 90%);
@@ -493,6 +514,7 @@ a {
         .button--banner:hover {
             background-color:var(--color-1-orange);
             color: white;
+            border-color:white;
         }
         .button--banner:active {
             color:black;
@@ -647,74 +669,154 @@ a {
     .card__head,
     .card__body {
         padding: 1.5rem 2rem;
+    }
 }
 
 /* ------------------------------------------------------------- */
 /* CARD STYLES SECTION */
+.styles-studios__outercontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 2rem;
+    column-gap: 2rem;
+}
 
 .dstyles_title {
     text-align: center;
+    padding: 2rem 0;
 }
-.dstyles_title span, .dstyles_title h4 {
+.dstyles_title span, .dstyles_title h3 {
     display: inline-block;
     vertical-align:middle;
 }
-.dstyles_title h4 {
+.dstyles_title h3 {
     padding: 1rem 1rem;
 }
 
 .card--dstyles__container {
-    max-width: 320px;
-    height: 420px;
-    justify-content: center;
+    width: 280px;
+    height: 320px;
     background: white;
+    border-radius: var(--border-radius);
+    position: relative;
+    text-align: center; /* to align the button to the center, for some reason it considers the button as text instead of an item*/
+}
+
+/* .card__container2 {
+    width: 280px;
+    height: 320px;
     border-radius: var(--border-radius);
 }
 
-.card--dstyles__head {
-    background:var(--color-4-headings);
-    border-top-left-radius: var(--border-radius-strong);
-    display: inline-grid; /* turning the card head into inline grid to align the h3/content */
+.card__container2 img {
+    width: 100%;
+    height: 100%;
 }
-.card--dstyles__head h3{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
+.card--casual img {
+    object-fit: cover;
 }
+.card--hiphop img {
+    object-fit: fill;
+} */
 
-.card--dstyles__body {
-    position: relative;
-}
-
-.card--dstyles__body::before {
+.card--dstyles__container:before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url("images/capoeira_matheus-natan.jpg");
     background-size: cover;
+    background-position: center;
     filter:var(--color-imgbrightness) var(--color-lowersaturate);
+    border-top-left-radius: var(--border-radius-strong);
     border-bottom-right-radius:var(--border-radius-strong);
+} 
+.card__casual.card--dstyles__container:before {
+    background-image: url("images/casual@512.png");
+}
+.card__hiphop.card--dstyles__container:before {
+    background-image: url("images/hiphop_dance@512.png");
+}
+.card__house.card--dstyles__container:before {
+    background-image: url("images/house@512.png");
+}
+.card__capoeira.card--dstyles__container:before {
+    background-image: url("images/capoeira_matheus-natan@2x.png");
+}
+.card__jazz.card--dstyles__container:before {
+    background-image: url("images/jazz@512.png");
+}
+.card__salsa.card--dstyles__container:before {
+    background-image: url("images/salsa@512.png");
+}
+.card__tango.card--dstyles__container:before {
+    background-image: url("images/tango@512.png");
+}
+.card__vogue.card--dstyles__container:before {
+    background-image: url("images/vogue@512.jpg");
+}
+.card__taiko.card--dstyles__container:before {
+    background-image: url("images/taiko@512.png");
+}
+.card__kids.card--dstyles__container:before {
+    background-image: url("images/kids@512.png");
+}
+.card__monthtrial.card--dstyles__container:before {
+    background-image: url("images/trial@512.png");
 }
 
-.card--dstyles__body ul {
-    padding: 2rem 2rem;
+.card--dstyles__container .grid--rows3 {
+    justify-content: center;
     position: absolute;
+    grid-template-rows: 20% 55% 25%;
+    grid-template-columns: 100%;
+}
+
+.card--dstyles__head {
+    background:var(--color-4-headings);
+    border-top-left-radius: var(--border-radius-strong);
+    /* display: inline-grid; turning the card head into inline grid to align the h3/content */
+    color: white;
+}
+.card--dstyles__head a,  .card--dstyles__head h4 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.card--dstyles__head h3 {
+    font-size: 2.5rem;
+}
+.card--dstyles__head a:visited {
+    color: white;
+}
+.card--dstyles__head a:hover {
+    color:var(--color-2-blue);
+}
+.card--dstyles__head a:active {
+    color:black;
+}
+
+.card--dstyles__body ul{
+    padding: 1rem 2rem;
     color: white;
     font-size: 1.2rem;
     font-weight: 600;
+    text-align: start;
+    list-style: circle;
 }
 
-.card--dstyles__body button {
-    position: absolute;
-    bottom: 5%;
-    right: 18%;
+
+.card--dstyles__container button {
     letter-spacing: .1rem;
     font-size: 1.2rem;
-    width: 200px;
+    width: 220px;
+    padding: .25rem 1rem;
+    justify-self: center;
+    
 }
 
 /* CARDS STUDIOS SECTION */
@@ -763,7 +865,6 @@ a {
 .card--studios__container.grid--rows2 {
     grid-template-rows: 60% 40%;
 }
-
 
 
 
