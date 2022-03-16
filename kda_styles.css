@@ -35,12 +35,6 @@
     margin: 0 auto;
 }
 
-/*  Full Background SECTION */
-.background::before {
-    background-repeat:no-repeat;
-    filter:var(--color-lowersaturate) var(--color-imgbrightness);
-}
-
 /* ------------------------------------------------------------- */
 /* Typography */
 ::selection {
@@ -161,6 +155,9 @@ a:active {
 
 /* ------------------------------------------------------------- */
 /*  COLLAPSIBLE SECTION */
+.collapsible {
+    text-align: center;
+}
 
 .collapsible__content {
     max-height: 0;
@@ -168,15 +165,22 @@ a:active {
     opacity: 0;
     transition: all 0.3s;
 }
+.collapsible__chevron {
+    transform: rotate(0);
+    transition: .3s;
+}
 
 .collapsible--expanded .collapsible__chevron {
-    transform: rotate(0);
+    transform: rotate(90deg);
 }
 .collapsible--expanded .collapsible__content {
     max-height: 100vh; /*viewport height */
     opacity: 1;
 }
 
+.collapsible--expanded .collapsible__content {
+    max-height: 100%;
+}
 
 /* ------------------------------------------------------------- */
 /* BUTTONS SECTION  */
@@ -271,7 +275,7 @@ a:active {
 .button--pictures {
     border: 2px solid white;
     color: white;
-    padding: 1rem 2rem;
+    padding: 1.5rem 4rem;
     font-size: 1.5rem;
     width: auto;
     border-radius: 0;
@@ -290,10 +294,9 @@ a:active {
 /* ------------------------------------------------------------- */
 /* ICONS SECTION */
 .icon {
-    font-size: 2.3rem;
+    font-size: 2.25rem;
     border-radius: 50%;
     padding: .2rem;
-
 }
 .icon-small {
     font-size: 2rem;
@@ -309,6 +312,11 @@ a:active {
     display:inline-flex;
     justify-content: center; /* horizontal axis */
     align-items: center; /* vertical axis */
+}
+
+.icon-title {
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .icon--1orange {
@@ -354,32 +362,37 @@ a:active {
 }
 .gridouter {
     display: grid;
-    row-gap: 1rem;
-    column-gap: 1rem;
+    row-gap: 2rem;
+    column-gap: 2rem;
     width: 100%;
     height: 100%;
 }
-.gridouter, .grid--cols3, .grid--cols5 {
+.gridouter, .grid--cols3 {
     justify-content: center;
     justify-items: center;
     align-items: center;
 }
 .grid--cols5 {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    column-gap: 0.5rem;
-    grid-template-rows: repeat(auto-fit, minmax(420px, 1fr));
+    grid-template-columns: 330px repeat(auto-fit, minmax(200px, 1fr));
+    column-gap: 2rem;
+    align-items: flex-start;
+    justify-items: center;
+    height: 100%;
 }
 
 /* ------------------------------------------------------------- */
 /* BLOCKS SECTION */
 .block {
     padding: calc(var(--padding-vertical) - 4rem) 2rem;
-    padding-bottom: calc(var(--padding-vertical) + 1rem);
     background: rgba(0, 0, 0, 0.9);
 }
+.block--center {
+    text-align: center;
+}
 
-.block--skewed-left {
-    clip-path: polygon(0% 0%, 100% 0%, 100% 97%, 0% 100%);
+.block--point-down {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 50% 100%, 0 95%);
+    padding-bottom: calc(var(--padding-vertical) + 2rem);
 }
 
 /* Media for items (icons, blocks, lists grids, badges) */
@@ -399,8 +412,7 @@ a:active {
         grid-template-columns: repeat(3, 1fr);
     }
    
-    .block--skewed-left {
-        clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 60% 90%, 50% 100%, 40% 90%, 0 90%);
+    .block--point-down {
         clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 50% 100%, 0 90%);
     }
 }
@@ -426,6 +438,8 @@ a:active {
     padding: 0.5rem 2rem;
     border-bottom: 1px solid #222;
     font-size: 1.2rem;
+    text-align: center;
+    vertical-align: middle;
 }
 .nav__item > a {
     color: #d2d0db;
@@ -453,7 +467,7 @@ a:active {
     transform: translateY(5px);
 }
 
-@media screen and (min-width: 850px){
+@media screen and (min-width: 1064px){
     .nav__toggler {
         display: none;
     }
@@ -536,12 +550,7 @@ a:active {
     }
 }
 
-/* ------------------------------------------------------------- */
-/* GALLERY SECTION */
-.gallery {
-    background: url(images/dance_gallery.png);
-    background-size: 100% auto;
-}
+
 
 /* ------------------------------------------------------------- */
 /* NEWS SECTION */
@@ -673,54 +682,19 @@ a:active {
 }
 
 /* ------------------------------------------------------------- */
-/* CARD STYLES SECTION */
+/* --- CARD STYLES and STUDIOS shared SECTION --- */
 .styles-studios__outercontainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     row-gap: 2rem;
     column-gap: 2rem;
+    margin: 1.5rem 0;
 }
 
-.dstyles_title {
-    text-align: center;
-    padding: 2rem 0;
-}
-.dstyles_title span, .dstyles_title h3 {
-    display: inline-block;
-    vertical-align:middle;
-}
-.dstyles_title h3 {
-    padding: 1rem 1rem;
-}
-
-.card--dstyles__container {
-    width: 280px;
-    height: 320px;
-    background: white;
-    border-radius: var(--border-radius);
-    position: relative;
-    text-align: center; /* to align the button to the center, for some reason it considers the button as text instead of an item*/
-}
-
-/* .card__container2 {
-    width: 280px;
-    height: 320px;
-    border-radius: var(--border-radius);
-}
-
-.card__container2 img {
-    width: 100%;
-    height: 100%;
-}
-.card--casual img {
-    object-fit: cover;
-}
-.card--hiphop img {
-    object-fit: fill;
-} */
-
-.card--dstyles__container:before {
+.card--dancestyles::before,
+.card--studios::before,
+.card--rental::before {
     content: '';
     position: absolute;
     top: 0;
@@ -733,41 +707,85 @@ a:active {
     border-top-left-radius: var(--border-radius-strong);
     border-bottom-right-radius:var(--border-radius-strong);
 } 
-.card__casual.card--dstyles__container:before {
-    background-image: url("images/casual@512.png");
-}
-.card__hiphop.card--dstyles__container:before {
-    background-image: url("images/hiphop_dance@512.png");
-}
-.card__house.card--dstyles__container:before {
-    background-image: url("images/house@512.png");
-}
-.card__capoeira.card--dstyles__container:before {
-    background-image: url("images/capoeira_matheus-natan@2x.png");
-}
-.card__jazz.card--dstyles__container:before {
-    background-image: url("images/jazz@512.png");
-}
-.card__salsa.card--dstyles__container:before {
-    background-image: url("images/salsa@512.png");
-}
-.card__tango.card--dstyles__container:before {
-    background-image: url("images/tango@512.png");
-}
-.card__vogue.card--dstyles__container:before {
-    background-image: url("images/vogue@512.jpg");
-}
-.card__taiko.card--dstyles__container:before {
-    background-image: url("images/taiko@512.png");
-}
-.card__kids.card--dstyles__container:before {
-    background-image: url("images/kids@512.png");
-}
-.card__monthtrial.card--dstyles__container:before {
-    background-image: url("images/trial@512.png");
-}
 
-.card--dstyles__container .grid--rows3 {
+/* STYLES BG */
+    .card--dancestyles {
+        width: 280px;
+        height: 320px;
+        background: white;
+        border-radius: var(--border-radius);
+        position: relative;
+        text-align: center; /* to align the button to the center, for some reason it considers the button as text instead of an item*/
+    }
+
+    .card__casual.card--dancestyles:before {
+        background-image: url("images/casual@512.png");
+    }
+    .card__hiphop.card--dancestyles:before {
+        background-image: url("images/hiphop_dance@512.png");
+    }
+    .card__house.card--dancestyles:before {
+        background-image: url("images/house@512.png");
+    }
+    .card__capoeira.card--dancestyles:before {
+        background-image: url("images/capoeira_matheus-natan@2x.png");
+    }
+    .card__jazz.card--dancestyles:before {
+        background-image: url("images/jazz@512.png");
+    }
+    .card__salsa.card--dancestyles:before {
+        background-image: url("images/salsa@512.png");
+    }
+    .card__tango.card--dancestyles:before {
+        background-image: url("images/tango@512.png");
+    }
+    .card__vogue.card--dancestyles:before {
+        background-image: url("images/vogue@512.jpg");
+    }
+    .card__taiko.card--dancestyles:before {
+        background-image: url("images/taiko@512.png");
+    }
+    .card__kids.card--dancestyles:before {
+        background-image: url("images/kids@512.png");
+    }
+    .card__monthtrial.card--dancestyles:before {
+        background-image: url("images/trial@512.png");
+    }
+
+/* STUDIOS BG */
+    .card--studios {
+        position: relative;
+        justify-items: center;
+        align-items: center;
+        width: 440px;
+        height: 210px;
+    }
+    .card--studios::before {
+        background-image: url("images/dance_studio@1x.png");
+    }
+
+/* RENTAL BG */
+    .card--rental {
+        position: relative;
+        justify-items: center;
+        align-items: center;
+        width: 400px;
+        height: 210px;
+    }
+    .bg__party.card--rental::before {
+        background-image: url("images/dance_studio@1x.png");
+    }
+    .bg__ex.card--rental::before {
+        background-image: url("images/dance_studio@1x.png");
+    }
+    .bg__work.card--rental::before {
+        background-image: url("images/dance_studio@1x.png");
+    }
+
+
+/* ------------------------------------------------------------- */
+/* CARD STYLES SECTION */
+.card--dancestyles .grid--rows3 {
     justify-content: center;
     position: absolute;
     grid-template-rows: 20% 55% 25%;
@@ -809,66 +827,133 @@ a:active {
     list-style: circle;
 }
 
-
-.card--dstyles__container button {
+.card--dancestyles button {
     letter-spacing: .1rem;
     font-size: 1.2rem;
     width: 220px;
     padding: .25rem 1rem;
     justify-self: center;
-    
 }
 
 /* CARDS STUDIOS SECTION */
-.card--studios__container{
-    position: relative;
-    justify-items: center;
-    align-items: center;
+.subtitle--shower--rental, 
+.subtitle--shower--rental h4 {
+    padding: 1rem 1rem;
+    font-size: 2.25rem;
 }
 
-.card--studios__container::before {
+.card--studios h2 {
+    padding-top: 2rem;
+    color: white;
+    opacity: .7;
+    font-size: 3rem;
+}
+
+.card--studios button {
+    position: relative;
+}
+
+.card--studios .icon {
+    font-size: 1rem;
+    border-radius: 50%;
+    padding: .2rem;
+}
+
+.card--studios.grid--rows2 {
+    grid-template-rows: 60% 40%;
+}
+
+/* RENTAL SECTION */
+.card--rental h3 {
+    color: white;
+    opacity: .7;
+}
+
+
+/* ------------------------------------------------------------- */
+/* GALLERY SECTION */
+.containerfull.gallery {
+    margin: 4rem 0 0;
+}
+
+.gallery::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url("images/dance_studio@1x.png");
     background-size: cover;
+    background-position: center;
     filter:var(--color-imgbrightness) var(--color-lowersaturate);
-    border-bottom-right-radius:var(--border-radius-strong);
-    border-top-left-radius:var(--border-radius-strong);
-}
+    background: url(images/dance_gallery.png);
+    background-size: 100% auto;
+} 
 
-.card--studios__container h2 {
-    padding-top: 2rem;
-    position: relative;
+.gallery .grid--rows3 {
+    grid-template-rows: auto auto 20%;
+    align-items:center;
+    justify-items: center;
     color: white;
-    opacity: .7;
 }
 
-.card--studios__container button {
-    position: relative;
+.gallery .styles-studios__outercontainer {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    row-gap: 1rem;
+    margin: 0;
 }
 
-.card--studios__container .icon {
-    font-size: 1rem;
-    border-radius: 50%;
-    padding: .2rem;
+.gallery img {
+    max-width: 240px;
+    width: auto;
+    height:auto;
 }
 
-.card--studios__container.grid {
-    width: 440px;
-    height: 210px;
+.gallery button {
+    width: 20rem;
 }
 
-.card--studios__container.grid--rows2 {
-    grid-template-rows: 60% 40%;
+@media screen and (min-width: 1024px) {
+    .gallery img {
+        max-width: 400px;
+        width: 100%;
+        height:auto;
+    }
+    .gallery .grid--rows3 {
+        grid-template-rows: 30% 40% 30%;
+    }
+    .gallery .styles-studios__outercontainer {
+        flex-direction:row;
+    }
+    
 }
-
-
-
 
 /* ------------------------------------------------------------- */
 /* FOOTER SECTION */
+.footer {
+    height: 100%;
+}
 
+.footer .grid--cols5 {
+    color: white;
+    opacity: 0.9;
+}
+
+.footer__last-col {
+    text-align: right;
+}
+
+.footer__lists li {
+    padding: .4rem;
+    font-size: 1.5rem;
+}
+
+.footer__last-col li {
+    padding-bottom: 1.5rem;
+}
+
+/* .footer.grid--cols5 .footer__logo {
+    grid-column-start: ;
+
+} */
