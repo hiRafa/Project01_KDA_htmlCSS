@@ -22,7 +22,6 @@
     max-width: 1420px;
     margin: 3rem auto;
     position: relative;
-    height: 100%;
 }
 
 .containerfull {
@@ -73,12 +72,13 @@ h3 {
 }
 
 h4, h5 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 600;
 }
 
 p {
     margin-top: 0;
+    font-size: 1.25rem;
 }
 
 /* bootstrap and tailwind use standard of 1024px */
@@ -159,6 +159,17 @@ a:active {
     text-align: center;
 }
 
+.collapsible__headerbox {
+    display: flex;
+    justify-content: space-between;
+}
+
+.collapsible__h1234 {
+    margin-top: 0;
+    flex-grow: 1;
+    font-size: 3rem;
+}
+
 .collapsible__content {
     max-height: 0;
     overflow: hidden;
@@ -167,6 +178,7 @@ a:active {
 }
 .collapsible__chevron {
     transform: rotate(0);
+    transition-property: rotate(0);
     transition: .3s;
 }
 
@@ -174,13 +186,30 @@ a:active {
     transform: rotate(90deg);
 }
 .collapsible--expanded .collapsible__content {
-    max-height: 100vh; /*viewport height */
+    max-height: 100%; /*viewport height */
     opacity: 1;
 }
 
-.collapsible--expanded .collapsible__content {
-    max-height: 100%;
+.styles-studios-collapsible {
+    cursor: pointer;
 }
+
+@media screen and (min-width: 1024px){
+    .styles-studios .collapsible__content,
+    .footer .collapsible__content {
+        opacity: 1;
+        max-height: 100%;
+    } /* this is what makes the content show up above the min width at all times and block hiding the content */
+    
+    #collapsible__chevron {
+        display: none;
+    }
+
+    .styles-studios-collapsible {
+        cursor:default;
+    }
+}
+
 
 /* ------------------------------------------------------------- */
 /* BUTTONS SECTION  */
@@ -364,20 +393,11 @@ a:active {
     display: grid;
     row-gap: 2rem;
     column-gap: 2rem;
-    width: 100%;
-    height: 100%;
 }
 .gridouter, .grid--cols3 {
     justify-content: center;
     justify-items: center;
     align-items: center;
-}
-.grid--cols5 {
-    grid-template-columns: 330px repeat(auto-fit, minmax(200px, 1fr));
-    column-gap: 2rem;
-    align-items: flex-start;
-    justify-items: center;
-    height: 100%;
 }
 
 /* ------------------------------------------------------------- */
@@ -420,19 +440,18 @@ a:active {
 /* ------------------------------------------------------------- */
 /* NAVIGATION BAR SECTION*/
 .nav {
+    align-items: center;
     background: black;
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: space-between;
     padding: 0 1rem;
-    align-items: center;
 }
 
 .nav__list {
     width: 100%;
     margin: 0;
 }
-
 
 .nav__item {
     padding: 0.5rem 2rem;
@@ -447,6 +466,10 @@ a:active {
 }
 .nav__item > a:hover {
     color: #fff;
+}
+.nav__item .material-icons {
+    display: inline;
+    vertical-align:text-top;
 }
 
 
@@ -573,6 +596,7 @@ a:active {
     align-items: center;
     border: 2px solid var(--color-2-blue);
     color:var(--color-2-blue);
+    max-height: 240px;
 }
 .eachnews__grid--cols2:hover {
     background: var(--color-2-blue);
@@ -586,12 +610,13 @@ a:active {
 
 .news__img {
     align-self: center;
+    padding: 1rem;
 }
 .news__img > img { /* if we use .news__image only it will shrink the container div, but not the image itself, thefore we need to target the img */
     max-height: 200px;
     max-width: 300px;
     width: 100%;
-    padding: 1rem;
+ 
 }   
 
 .news__body {
@@ -615,6 +640,12 @@ a:active {
 
 /* ------------------------------------------------------------- */
 /* CARD SECTION */
+#prices__note {
+    padding-top: 3rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
 .card__container {
     max-width: 380px;
     height: 500px;
@@ -652,9 +683,12 @@ a:active {
     display: inline-block;
     position: absolute;
     top: -20px;
-    right: 10%;
+    right: 5%;
     transform: rotate(-10deg);
 } 
+.popular--seal .card__head h2 {
+    font-size: 5rem;
+}
 
 .popular {
     max-width: 450px;
@@ -677,19 +711,19 @@ a:active {
 @media screen and (min-width: 1024px) {
     .card__head,
     .card__body {
-        padding: 1.5rem 2rem;
+        padding: 2.5rem 2rem;
     }
 }
 
 /* ------------------------------------------------------------- */
 /* --- CARD STYLES and STUDIOS shared SECTION --- */
 .styles-studios__outercontainer {
+    column-gap: 2rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    row-gap: 2rem;
-    column-gap: 2rem;
     margin: 1.5rem 0;
+    row-gap: 2rem;
 }
 
 .card--dancestyles::before,
@@ -935,25 +969,36 @@ a:active {
     height: 100%;
 }
 
-.footer .grid--cols5 {
-    color: white;
-    opacity: 0.9;
+.footer.block .container1420 {
+    margin: 2rem auto;
+    height: 100%;
 }
 
-.footer__last-col {
-    text-align: right;
+/* Grid layout for mobile vertical 1column */
+.footer__logo {
+    justify-self: center;
 }
 
 .footer__lists li {
-    padding: .4rem;
+    padding: .5rem;
     font-size: 1.5rem;
 }
 
 .footer__last-col li {
-    padding-bottom: 1.5rem;
+    padding: 1rem 0;
 }
 
-/* .footer.grid--cols5 .footer__logo {
-    grid-column-start: ;
+@media screen and (min-width: 1024px) {
+    .footer .grid--footer {
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    }
+    .footer__logo {
+        order: -1;
+    }
 
-} */
+    .footer__last-col,
+    .footer__last-col .collapsible__headerbox {
+        text-align: right;
+        justify-self: center;
+    }
+}

@@ -12,34 +12,30 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="normalize.css"/>
-    <link rel="stylesheet" href="kda_styles.css"/>
+    <link rel="stylesheet" href="kda_styles_ENG.css"/>
 </head>
 
 <body>
     <nav class="nav collapsible"> <!-- collpasible class is only for JS, it applies collapsible--content -->
-        <a href="/"><img src="icons/logo.svg" alt=""></a> <!-- forward slash on href= is the root of the website -->
+        <a href="/"><img src="icons/KDA_logo.png" alt=""></a> <!-- forward slash on href= is the root of the website -->
         <span class="material-icons icon-small icon--white nav__toggler"> menu </span>
         <ul class="list nav__list collapsible__content">
-            <li class="nav__item"><a href="#">Start Here</a></li>
-            <li class="nav__item"><a href="#">Plans</a></li>
+            <li class="nav__item"><a href="#">Start Here/Plans</a></li>
             <li class="nav__item"><a href="#">Schedule</a></li>
             <li class="nav__item"><a href="#">Styles</a></li>
             <li class="nav__item"><a href="#">Studios</a></li>
             <li class="nav__item"><a href="#">Recruit</a></li>
-            <li class="nav__item"><a href="">
-                <a>
-                    <span class="material-icons icon--white">
-                    language
-                    </span>
-                    <span> EN </span>
+            <li class="nav__item"><a href="#">Pictures</a></li>
+            <li class="nav__item">
+                <a href="">
+                    <span class="material-icons"> language </span>
+                    <span> ENG </span>
                 </a>
             </li>
-            <li class="nav__item"><a href="">
-                <a>
-                    <span class="material-icons icon--white">
-                    language
-                    </span>
-                    <span> JP </span>
+            <li class="nav__item">
+                <a href="">
+                    <span class="material-icons"> language </span>
+                    <span> 日本語 </span>
                 </a>
             </li>
         </ul>
@@ -91,7 +87,7 @@
 
             <a href="#" class="grid eachnews__grid--cols2">
                 <div class="news__img">
-                    <img src="images/dancer@1x.png" alt="kenta instructor">
+                    <img src="images/dancer@512.png" alt="kenta instructor">
                 </div>
                 <div class="news__body">
                     <h4>2021.12.23</h4>
@@ -101,7 +97,7 @@
 
             <a href="#" class="grid eachnews__grid--cols2">
                 <div class="news__img">
-                    <img src="images/dancer@1x.png" alt="kenta instructor">
+                    <img src="images/dancer@512.png" alt="kenta instructor">
                 </div>
                 <div class="news__body">
                     <h4>2022.10.20</h4>
@@ -114,65 +110,67 @@
     </section>
 
 
-    <section class="block block--point-down">
-        <div class="container1420 gridouter grid--cols3">
-            
-            <div class="card__container">
-                <div class="grid grid--rows3">
-                    <div class="card__head">
-                        <h3>1 time</h3>
-                        <h2>¥12,000</h2>
-                    </div>
-                    <div class="card__body">
-                        <p>
-                            Unlimited access to all classes anywhere.
-                        </p>
-                        <div class="">
-                            <span class="badge card__badge">20% OFF</span>
+    <section class="block block--point-down ">
+        <div class="container1420 prices">
+
+            <div class="gridouter grid--cols3">
+                <div class="card__container">
+                    <div class="grid grid--rows3">
+                        <div class="card__head">
+                            <h3>1 time</h3>
+                            <h2>¥2,000</h2>
+                        </div>
+                        <div class="card__body">
+                            <p>
+                                Unlimited access to all classes anywhere.
+                            </p>
+                            <div class="">
+                                <span class="badge card__badge">20% OFF</span>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="button button--3yellow">1 Lesson !</button>
                         </div>
                     </div>
-                    <div>
-                        <button class="button button--3yellow">1 Lesson !</button>
+                </div>
+                <div class="card__container">
+                    <div class="grid grid--rows3">
+                        <div class="card__head">
+                            <h3>8 lessons</h3>
+                            <h2>¥16,000</h2>
+                        </div>
+                        <div class="card__body">
+                            <p>
+                                Unlimited access to all classes anywhere.
+                            </p>
+                            <span class="badge card__badge">20% OFF</span>
+                        </div>
+                        <div>
+                            <button class="button button--3yellow">8 Lessons !</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="card__container">
-                <div class="grid grid--rows3">
-                    <div class="card__head">
-                        <h3>8 lessons</h3>
-                        <h2>¥16,000</h2>
-                    </div>
-                    <div class="card__body">
-                        <p>
-                            Unlimited access to all classes anywhere.
-                        </p>
-                        <span class="badge card__badge">20% OFF</span>
-                    </div>
-                    <div>
-                        <button class="button button--3yellow">8 Lessons !</button>
-                    </div>
+                <div class="card__container popular">
+                    <div class="grid grid--rows3 popular--seal">
+                        <div class="card__head">
+                            <h3>Monthly</h3>
+                            <h2>¥12,000</h2>
+                        </div>
+                        <div class="card__body">
+                            <p>
+                                Unlimited access to all classes anywhere.
+                            </p>
+                            <span class="badge card__badge">20% OFF</span>
+                        </div>
+                        <div>
+                            <button class="button button--1orange">Unlimited !</button>
+                        </div>
+                    </div>                
                 </div>
-            </div>
 
-
-            <div class="card__container popular">
-                <div class="grid grid--rows3 popular--seal">
-                    <div class="card__head">
-                        <h3>Monthly</h3>
-                        <h2>¥12,000</h2>
-                    </div>
-                    <div class="card__body">
-                        <p>
-                            Unlimited access to all classes anywhere.
-                        </p>
-                        <span class="badge card__badge">20% OFF</span>
-                    </div>
-                    <div>
-                        <button class="button button--1orange">Unlimited !</button>
-                    </div>
-                </div>
             </div>
+            <p id="prices__note">Classes have limited number of students due to space. It is not possible to subscribe to classes that are fully booked.</p> 
+
         </div> <!-- container1420 gridouter  -->
 
     </section>
@@ -182,9 +180,11 @@
         <h3 class="icon-title">Check out classes' schedule and instructors by styles or studios!</h3>
     </section>    
 
-    <section class="container1420 collapsible">
-        <span class="material-icons icon icon-title collapsible__chevron"> keyboard_arrow_right </span>
-        <h3 class="icon-title">Styles</h3>
+    <section class="container1420 styles-studios collapsible">
+        <div class="styles-studios-collapsible">
+            <h3 class="icon-title">Styles</h3>
+            <span class="material-icons icon icon-title" id="collapsible__chevron"> keyboard_arrow_right </span>
+        </div>
 
         <div class="collapsible__content">
             <div class="styles-studios__outercontainer"> <!-- container just for the card layout and background image -->
@@ -449,9 +449,12 @@
         </div>
     </section>
 
-    <section class="container1420 collapsible">
-        <span class="material-icons icon collapsible__chevron icon-title"> keyboard_arrow_right </span>
-        <h3 class="icon-title">Studios</h3>
+    <section class="container1420 styles-studios collapsible">
+        <div class="styles-studios-collapsible">
+            <h3 class="icon-title">Studios</h3>
+            <span class="material-icons icon icon-title" id="collapsible__chevron"> keyboard_arrow_right </span>
+        </div>
+
         <div class="subtitle--shower--rental">
             <span class="icon-title material-icons icon icon--headings icon--1orange">
                 shower
@@ -576,80 +579,115 @@
         </div>  
     </section>
 
+    <section class="container1420 card__news">
+        <h2> Message us if you have any doubts! </h2>
+        <form action="" method="POST">
+                <label for="dropdown"> Subject: </label>
+                <select name="dropdown">
+                    <option value="Instructors">Instructors</option>
+                    <option value="Styles">Dance Styles</option>
+                    <option value="Styles">Studios</option>
+                    <option value="Styles">Schedule</option>
+                    <option value="Styles">Trial lesson</option>
+                </select>
+            <hr>
+                <label for="text"> Name </label>
+                <input type="text" name="name" required maxlength="30">
+            <hr>
+                <label for="num"> Phone Number </label>
+                <input type="number" name="phonenumber" required minlength="5" maxlength="13">
+            <hr>
+                <label for="radio"> Select one of the following if you wish to be contacted by text: </label>
+                    <input type="radio" name="radio" value="email">
+                <label for="Email">Email</label>
+                    <input type="radio" name="radio" value="line">
+                <label for="Line">Line</label>
+                    <input type="radio" name="radio" value="whatsapp">
+                <label for="whatsapp">Whatsapp</label>
+            <hr>
+                <input type="submit" value="Submit and we will send you the pdf file">
+        </form>
+    </section>
+
     <footer class="footer block">
-        <div class="container1420 grid grid--cols5">
+        <div class="container1420">
+            <div class="grid grid--footer">
 
-            <div class="footer__logo">
-                <h2>KATSUDOU <br> DANCE <br> ACADEMY <br> カツドウ</h2>
-            </div>
+                <div class="collapsible">
+                    <div class="collapsible__headerbox">
+                        <h3 class="collapsible__h1234">Plans</h3>
+                    </div>
+                    <ul class="collapsible__content collapsible--expanded list footer__lists">
+                        <a href="#"><li>Monthly</li></a>
+                        <a href="#"><li>8 lessons pack</li></a>
+                        <a href="#"><li>By lesson</li></a>
+                    </ul>
+                </div>
+                <div class="collapsible">
+                    <div class="collapsible__headerbox">
+                    <h3 class="collapsible__h1234">Styles</h3>
+                    </div>
+                    <ul class="collapsible__content list footer__lists">
+                        <a href="#"><li>Casual</li></a>
+                        <a href="#"><li>Vogue</li></a>
+                        <a href="#"><li>Vogue</li></a>
+                        <a href="#"><li>Hip Hop</li></a>
+                        <a href="#"><li>House</li></a>
+                        <a href="#"><li>Capoeira</li></a>
+                        <a href="#"><li>Salsa</li></a>
+                        <a href="#"><li>Tango</li></a>
+                        <a href="#"><li>Kids</li></a>
+                    </ul>
+                </div>
+                <div class="collapsible">
+                    <div class="collapsible__headerbox">
+                        <h3 class="collapsible__h1234">Studios</h3>
+                    </div>
+                    <ul class="collapsible__content list footer__lists">
+                        <a href="#"><li>Shinjuku</li></a>
+                        <a href="#"><li>Shibuya</li></a>
+                        <a href="#"><li>Ueno</li></a>
+                        <a href="#"><li>Yokohama</li></a>
+                        <a href="#"><li>Oomiya</li></a>
+                        <a href="#"><li>Kinshicho</li></a>
+                        <a href="#"><li>Ikebukuro</li></a>
+                        <a href="#"><li>Ebisu</li></a>
+                    </ul>
+                </div>
+                
+                <div class="collapsible  footer__last-col">
+                    <div class="collapsible__headerbox">
+                        <h3 class="collapsible__h1234 ">Other</h3>
+                    </div>
+                    <ul class="collapsible__content list">
+                        <a href="#"><li><h3>Trial</h3></li></a>
+                        <a href="#"><li><h3>News</h3></li>
+                        <a href="#"><li><h3>Pictures</h3></li>
+                
+                        <li>
+                            <a href="#">
+                            <span class="material-icons icon icon-container">
+                                whatsapp
+                            </span>
+                            </a>
+                        </li>
+                
+                        <li>
+                            <a href="#">
+                            <span class="material-icons icon icon-container">
+                                image
+                            </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
 
-            <div>
-                <h3>Plans</h3>
-                <ul class="list footer__lists">
-                    <a href="#"><li>Monthly</li></a>
-                    <a href="#"><li>8 lessons pack</li></a>
-                    <a href="#"><li>By lesson</li></a>
-                </ul>
-            </div>
-
-            <div>
-                <h3>Styles</h3>
-                <ul class="list footer__lists">
-                    <a href="#">
-                        <li>Casual</li>
-                        <li>Vogue</li>
-                        <li>Jazz</li>
-                        <li>Hip Hop</li>
-                        <li>House</li>
-                        <li>Capoeira</li>
-                        <li>Salsa</li>
-                        <li>Tango</li>
-                        <li>Kids</li>
-                    </a>
-                </ul>
-            </div>   
-
-            <div>
-                <h3>Studios</h3>
-                <ul class="list footer__lists">
-                    <a href="#">
-                        <li>Shinjuku</li>
-                        <li>Shibuya</li>
-                        <li>Ueno</li>
-                        <li>Yokohama</li>
-                        <li>Oomiya</li>
-                        <li>Kinshicho</li>
-                        <li>Ikebukuro</li>
-                        <li>Ebisu</li>
-                    </a>
-                </ul>
-            </div>       
-            
-            <div>
-                <ul class="list footer__last-col">
-                    <a href="#"><li><h3>Trial</h3></li></a>
-                    <a href="#"><li><h3>News</h3></li>
-                    <a href="#"><li><h3>Pictures</h3></li>
-                    
-                    <li>
-                        <a href="#">
-                        <span class="material-icons icon icon-container">
-                            whatsapp
-                        </span>
-                        </a>
-                    </li>  
-                    
-                    <li>
-                        <a href="#">
-                        <span class="material-icons icon icon-container">
-                            image
-                        </span>
-                        </a>
-                    </li>
-                </ul>
-            </div>       
-        </div>
-    </footer>
+                <div class="footer__logo">
+                    <a href="/"><img src="icons/KDA_logo.png" alt=""></a>
+                </div>    
+            </div>  <!-- inner grid -->
+        </div> <!-- inner container1420 -->
+    </footer> <!-- outer container -->
     <script src="main.js"></script>
 </body>
 </html>
