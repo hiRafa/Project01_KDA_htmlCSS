@@ -201,7 +201,7 @@ a:active {
         max-height: 100%;
     } /* this is what makes the content show up above the min width at all times and block hiding the content */
     
-    #collapsible__chevron {
+    .styles-studios-collapsible .collapsible__chevron {
         display: none;
     }
 
@@ -223,6 +223,8 @@ a:active {
     font-weight: bold;
     padding: .5rem 1.5rem;
     width: 10rem;
+    transition: background .5s, 
+        border-color .8s;
 }
 .button:hover {
     cursor: pointer;
@@ -285,11 +287,10 @@ a:active {
     border-radius: 50px;
     color: white;
     text-align: center;
-    width: 75%;
+    width: 65%;
     padding: .4rem .3rem;
 }
 .button--stretched p {
-    padding: 0 1rem;
     display: inline-block;
 }
 .button--4orangeBG:hover, .button--stretched:hover {
@@ -308,6 +309,10 @@ a:active {
     font-size: 1.5rem;
     width: auto;
     border-radius: 0;
+}
+
+.button__anchor {
+    width: 100%;
 }
 
 /* ------------------------------------------------------------- */
@@ -901,6 +906,13 @@ a:active {
 .card--rental h3 {
     color: white;
     opacity: .7;
+}
+
+/* ------------------------------------------------------------- */
+/* FORM SECTION */
+.lable__answer {
+    color: black;
+    font-weight: 500;
 }
 
 

@@ -13,6 +13,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="normalize.css"/>
     <link rel="stylesheet" href="kda_styles_ENG.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <body>
@@ -27,7 +28,7 @@
             <li class="nav__item"><a href="#">Recruit</a></li>
             <li class="nav__item"><a href="#">Pictures</a></li>
             <li class="nav__item">
-                <a href="">
+                <a href="kda_index_ENG.html">
                     <span class="material-icons"> language </span>
                     <span> ENG </span>
                 </a>
@@ -50,10 +51,12 @@
                 <div class="banner__content-right">
                     <h3>Start here!</h3>
                     <h2>Trial Lesson</h2>
-                    <button class="button button--banner">
-                        <p>¥2,000</p>
-                        <div>¥1,000</div>
-                    </button>
+                    <a href="#buttons-anchor" class="button__anchor">
+                        <button class="button button--banner">
+                            <p>¥2,000</p>
+                            <div>¥1,000</div>
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -114,7 +117,7 @@
         <div class="container1420 prices">
 
             <div class="gridouter grid--cols3">
-                <div class="card__container">
+                <div class="card__container" data-aos="zoom-in-up">
                     <div class="grid grid--rows3">
                         <div class="card__head">
                             <h3>1 time</h3>
@@ -129,11 +132,13 @@
                             </div>
                         </div>
                         <div>
-                            <button class="button button--3yellow">1 Lesson !</button>
+                            <a href="#buttons-anchor" class="button__anchor">
+                                <button class="button button--3yellow">1 Lesson !</button>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="card__container">
+                <div class="card__container" data-aos="zoom-in-up">
                     <div class="grid grid--rows3">
                         <div class="card__head">
                             <h3>8 lessons</h3>
@@ -146,11 +151,13 @@
                             <span class="badge card__badge">20% OFF</span>
                         </div>
                         <div>
-                            <button class="button button--3yellow">8 Lessons !</button>
+                            <a href="#buttons-anchor" class="button__anchor">
+                                <button class="button button--3yellow">8 Lessons !</button>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="card__container popular">
+                <div class="card__container popular" data-aos="zoom-in-up">
                     <div class="grid grid--rows3 popular--seal">
                         <div class="card__head">
                             <h3>Monthly</h3>
@@ -163,7 +170,9 @@
                             <span class="badge card__badge">20% OFF</span>
                         </div>
                         <div>
-                            <button class="button button--1orange">Unlimited !</button>
+                            <a href="#buttons-anchor" class="button__anchor">
+                                <button class="button button--1orange">Unlimited !</button>
+                            </a>
                         </div>
                     </div>                
                 </div>
@@ -183,13 +192,13 @@
     <section class="container1420 styles-studios collapsible">
         <div class="styles-studios-collapsible">
             <h3 class="icon-title">Styles</h3>
-            <span class="material-icons icon icon-title" id="collapsible__chevron"> keyboard_arrow_right </span>
+            <span class="material-icons icon icon-title collapsible__chevron"> keyboard_arrow_right </span>
         </div>
 
         <div class="collapsible__content">
             <div class="styles-studios__outercontainer"> <!-- container just for the card layout and background image -->
             
-                <div class="card__casual card--dancestyles"> <!-- layer over the background container to hold the grid-->
+                <div class="card__casual card--dancestyles" data-aos="flip-left"> <!-- layer over the background container to hold the grid-->
                     <div class="grid grid--rows3"> <!-- grid to layout head, body, button -->
                         <div class="card--dstyles__head">
                             <a href="https://youtu.be/tJa--IgS2p8?t=100" target="_blank">             
@@ -208,13 +217,15 @@
                         </div>
                         
                         <div>
-                            <button class="button button--4orangeBG">Schedule & Instructors</button>
+                            <a href="#buttons-anchor" class="button__anchor">
+                                <button class="button button--4orangeBG">Schedule & Instructors</button>
+                            </a>    
                         </div>
                     </div>
                 </div>
     
 
-                <div class="card__hiphop card--dancestyles">
+                <div class="card__hiphop card--dancestyles" data-aos="flip-left">
                     <div class="grid grid--rows3">
                         <div class="card--dstyles__head">
                             <a href="https://www.youtube.com/watch?v=trOjXFjYESQ" target="_blank">             
@@ -231,12 +242,14 @@
                             </ul>
                         </div>
                         <div>
-                            <button class="button button--4orangeBG">Schedule & Instructors</button>
+                            <a href="#buttons-anchor" class="button__anchor">
+                                <button class="button button--4orangeBG">Schedule & Instructors</button>
+                            </a>    
                         </div>
                     </div>
                 </div>
 
-                <div class="card__house card--dancestyles">
+                <div class="card__house card--dancestyles" data-aos="flip-left">
                     <div class="grid grid--rows3">
                         <div class="card--dstyles__head">
                             <a href="https://youtu.be/tJa--IgS2p8?t=100" target="_blank">             
@@ -254,7 +267,9 @@
                             </ul>
                         </div>
                         <div>
-                            <button class="button button--4orangeBG">Schedule & Instructors</button>
+                            <a href="#buttons-anchor" class="button__anchor">
+                                <button class="button button--4orangeBG">Schedule & Instructors</button>
+                            </a>    
                         </div>
                     </div>
                 </div>
@@ -262,9 +277,9 @@
 
             <!-- 4 cards middle-->
 
-            <div class="styles-studios__outercontainer">
+            <div class="styles-studios__outercontainer" >
 
-                <div class="card__capoeira card--dancestyles">
+                <div class="card__capoeira card--dancestyles" data-aos="flip-right">
                     <div class="grid grid--rows3">
                         <div class="card--dstyles__head">
                             <a href="https://youtu.be/tJa--IgS2p8?t=100" target="_blank">             
@@ -282,12 +297,14 @@
                             </ul>
                         </div>
                         <div>
-                            <button class="button button--4orangeBG">Schedule & Instructors</button>
+                            <a href="#buttons-anchor" class="button__anchor">
+                                <button class="button button--4orangeBG">Schedule & Instructors</button>
+                            </a>    
                         </div>
                     </div>
                 </div>
 
-                <div class="card__jazz card--dancestyles">
+                <div class="card__jazz card--dancestyles" data-aos="flip-right">
                     <div class="grid grid--rows3">
                         <div class="card--dstyles__head">
                             <a href="https://youtu.be/tJa--IgS2p8?t=100" target="_blank">             
@@ -305,12 +322,14 @@
                             </ul>
                         </div>
                         <div>
-                            <button class="button button--4orangeBG">Schedule & Instructors</button>
+                            <a href="#buttons-anchor" class="button__anchor" >
+                                <button class="button button--4orangeBG">Schedule & Instructors</button>
+                            </a>    
                         </div>
                     </div>
                 </div>
 
-                <div class="card__salsa card--dancestyles">
+                <div class="card__salsa card--dancestyles" data-aos="flip-right">
                     <div class="grid grid--rows3">
                         <div class="card--dstyles__head">
                             <a href="https://youtu.be/tJa--IgS2p8?t=100" target="_blank">             
@@ -328,12 +347,14 @@
                             </ul>
                         </div>
                         <div>
-                            <button class="button button--4orangeBG">Schedule & Instructors</button>
+                            <a href="#buttons-anchor" class="button__anchor">
+                                <button class="button button--4orangeBG">Schedule & Instructors</button>
+                            </a>    
                         </div>
                     </div>
                 </div>
 
-                <div class="card__tango card--dancestyles">
+                <div class="card__tango card--dancestyles" data-aos="flip-right">
                     <div class="grid grid--rows3">
                         <div class="card--dstyles__head">
                             <a href="https://youtu.be/tJa--IgS2p8?t=100" target="_blank">             
@@ -351,7 +372,9 @@
                             </ul>
                         </div>
                         <div>
-                            <button class="button button--4orangeBG">Schedule & Instructors</button>
+                            <a href="#buttons-anchor" class="button__anchor">
+                                <button class="button button--4orangeBG">Schedule & Instructors</button>
+                            </a>    
                         </div>
                     </div>
                 </div>
@@ -359,9 +382,9 @@
 
             <!-- 3 cards end-->
 
-            <div class="styles-studios__outercontainer">
+            <div class="styles-studios__outercontainer" >
 
-                <div class="card__vogue card--dancestyles">
+                <div class="card__vogue card--dancestyles" data-aos="flip-left">
                     <div class="grid grid--rows3">
                         <div class="card--dstyles__head">
                             <a href="https://youtu.be/tJa--IgS2p8?t=100" target="_blank">             
@@ -379,12 +402,14 @@
                             </ul>
                         </div>
                         <div>
-                            <button class="button button--4orangeBG">Schedule & Instructors</button>
+                            <a href="#buttons-anchor" class="button__anchor">
+                                <button class="button button--4orangeBG">Schedule & Instructors</button>
+                            </a>    
                         </div>
                     </div>
                 </div>
 
-                <div class="card__taiko card--dancestyles">
+                <div class="card__taiko card--dancestyles" data-aos="flip-left">
                     <div class="grid grid--rows3">
                         <div class="card--dstyles__head">
                             <a href="https://youtu.be/tJa--IgS2p8?t=100" target="_blank">             
@@ -402,12 +427,14 @@
                             </ul>
                         </div>
                         <div>
-                            <button class="button button--4orangeBG">Schedule & Instructors</button>
+                            <a href="#buttons-anchor" class="button__anchor">
+                                <button class="button button--4orangeBG">Schedule & Instructors</button>
+                            </a>    
                         </div>
                     </div>
                 </div>
 
-                <div class="card__kids card--dancestyles">
+                <div class="card__kids card--dancestyles" data-aos="flip-left">
                     <div class="grid grid--rows3">
                         <div class="card--dstyles__head">
                             <a href="https://youtu.be/tJa--IgS2p8?t=100" target="_blank">             
@@ -425,12 +452,14 @@
                             </ul>
                         </div>
                         <div>
-                            <button class="button button--4orangeBG">Schedule & Instructors</button>
+                            <a href="#buttons-anchor" class="button__anchor">
+                                <button class="button button--4orangeBG">Schedule & Instructors</button>
+                            </a>    
                         </div>
                     </div>
                 </div>
 
-                <div class="card__monthtrial card--dancestyles">
+                <div class="card__monthtrial card--dancestyles" data-aos="flip-left">
                     <div class="grid grid--rows3">
                         <div class="card--dstyles__head">
                             <h4>This month</h4>
@@ -441,7 +470,9 @@
                             </ul>
                         </div>
                         <div>
-                            <button class="button button--4orangeBG">Trial</button>
+                            <a href="#buttons-anchor" class="button__anchor">
+                                <button class="button button--4orangeBG">Trial</button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -452,7 +483,7 @@
     <section class="container1420 styles-studios collapsible">
         <div class="styles-studios-collapsible">
             <h3 class="icon-title">Studios</h3>
-            <span class="material-icons icon icon-title" id="collapsible__chevron"> keyboard_arrow_right </span>
+            <span class="material-icons icon icon-title collapsible__chevron"> keyboard_arrow_right </span>
         </div>
 
         <div class="subtitle--shower--rental">
@@ -467,76 +498,92 @@
         <div class="collapsible__content">
             <div class="styles-studios__outercontainer">
 
-                <div class="card--studios grid grid--rows2">
+                <div class="card--studios grid grid--rows2" data-aos="flip-up">
                     <h2> SHINJUKU </h2>
-                    <button class="button button--stretched">
-                        <span class="material-icons icon">schedule</span> 
-                        <p> Schedule & Facility </p>
-                        <span class="material-icons icon icon--white"> location_on </span>
-                    </button>
+                    <a href="#buttons-anchor" class="button__anchor">
+                        <button class="button button--stretched">
+                            <span class="material-icons icon">schedule</span> 
+                            <p> Schedule & Facility </p>
+                            <span class="material-icons icon icon--white"> location_on </span>
+                        </button>
+                    </a>
                 </div>
 
-                <div class="card--studios grid grid--rows2">
+                <div class="card--studios grid grid--rows2" data-aos="flip-down">
                     <h2> IKEBUKURO </h2>
-                    <button class="button button--stretched">
-                        <span class="material-icons icon">schedule</span> 
-                        <p> Schedule & Facility </p>
-                        <span class="material-icons icon icon--white"> location_on </span>
-                    </button>
+                    <a href="#buttons-anchor" class="button__anchor">
+                        <button class="button button--stretched">
+                            <span class="material-icons icon">schedule</span> 
+                            <p> Schedule & Facility </p>
+                            <span class="material-icons icon icon--white"> location_on </span>
+                        </button>
+                    </a>
                 </div>
 
-                <div class="card--studios grid grid--rows2">
+                <div class="card--studios grid grid--rows2" data-aos="flip-up">
                     <h2> SHIBUYA </h2>
-                    <button class="button button--stretched">
-                        <span class="material-icons icon">schedule</span> 
-                        <p> Schedule & Facility </p>
-                        <span class="material-icons icon icon--white"> location_on </span>
-                    </button>
+                    <a href="#buttons-anchor" class="button__anchor">
+                        <button class="button button--stretched">
+                            <span class="material-icons icon">schedule</span> 
+                            <p> Schedule & Facility </p>
+                            <span class="material-icons icon icon--white"> location_on </span>
+                        </button>
+                    </a>
                 </div>
 
-                <div class="card--studios grid grid--rows2">
+                <div class="card--studios grid grid--rows2" data-aos="flip-down">
                     <h2> EBISU </h2>
-                    <button class="button button--stretched">
-                        <span class="material-icons icon">schedule</span> 
-                        <p> Schedule & Facility </p>
-                        <span class="material-icons icon icon--white"> location_on </span>
-                    </button>
+                    <a href="#buttons-anchor" class="button__anchor">
+                        <button class="button button--stretched">
+                            <span class="material-icons icon">schedule</span> 
+                            <p> Schedule & Facility </p>
+                            <span class="material-icons icon icon--white"> location_on </span>
+                        </button>
+                    </a>
                 </div>
 
-                <div class="card--studios grid grid--rows2">
+                <div class="card--studios grid grid--rows2" data-aos="flip-up">
                     <h2> KINSHICHO </h2>
-                    <button class="button button--stretched">
-                        <span class="material-icons icon">schedule</span> 
-                        <p> Schedule & Facility </p>
-                        <span class="material-icons icon icon--white"> location_on </span>
-                    </button>
+                    <a href="#buttons-anchor" class="button__anchor">
+                        <button class="button button--stretched">
+                            <span class="material-icons icon">schedule</span> 
+                            <p> Schedule & Facility </p>
+                            <span class="material-icons icon icon--white"> location_on </span>
+                        </button>
+                    </a>
                 </div>
 
-                <div class="card--studios grid grid--rows2">
+                <div class="card--studios grid grid--rows2" data-aos="flip-down">
                     <h2> OOMIYA </h2>
-                    <button class="button button--stretched">
-                        <span class="material-icons icon">schedule</span> 
-                        <p> Schedule & Facility </p>
-                        <span class="material-icons icon icon--white"> location_on </span>
-                    </button>
+                    <a href="#buttons-anchor" class="button__anchor">
+                        <button class="button button--stretched">
+                            <span class="material-icons icon">schedule</span> 
+                            <p> Schedule & Facility </p>
+                            <span class="material-icons icon icon--white"> location_on </span>
+                        </button>
+                    </a>
                 </div>
 
-                <div class="card--studios grid grid--rows2">
+                <div class="card--studios grid grid--rows2" data-aos="flip-up">
                     <h2> YOKOHAMA </h2>
-                    <button class="button button--stretched">
-                        <span class="material-icons icon">schedule</span> 
-                        <p> Schedule & Facility </p>
-                        <span class="material-icons icon icon--white"> location_on </span>
-                    </button>
+                    <a href="#buttons-anchor" class="button__anchor">
+                        <button class="button button--stretched">
+                            <span class="material-icons icon">schedule</span> 
+                            <p> Schedule & Facility </p>
+                            <span class="material-icons icon icon--white"> location_on </span>
+                        </button>
+                    </a>
                 </div>
 
-                <div class="card--studios grid grid--rows2">
+                <div class="card--studios grid grid--rows2" data-aos="flip-down">
                     <h2> UENO </h2>
-                    <button class="button button--stretched">
-                        <span class="material-icons icon">schedule</span> 
-                        <p> Schedule & Facility </p>
-                        <span class="material-icons icon icon--white"> location_on </span>
-                    </button>
+                    <a href="#buttons-anchor" class="button__anchor">
+                        <button class="button button--stretched">
+                            <span class="material-icons icon">schedule</span> 
+                            <p> Schedule & Facility </p>
+                            <span class="material-icons icon icon--white"> location_on </span>
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -556,7 +603,7 @@
                 <h3> Workshops </h3>         
             </div>
         </div>
-        <a href="#" target="">
+        <a href="#buttons-anchor" target="">
             <button class="button button--pictures">More about</button>
         </a>
     </section>
@@ -565,13 +612,22 @@
         <div class="container1420 grid grid--rows3">
             <h2 class="subtitle--shower--rental"> Pictures </h2>
             <div class="styles-studios__outercontainer">
-                <picture>
+                <picture data-aos="fade-zoom-in"
+                data-aos-easing="ease-in-back"
+                data-aos-delay="150"
+                data-aos-offset="0">
                     <img src="images/casual@512.png" alt="">
                 </picture>
-                <picture>
+                <picture data-aos="fade-zoom-in"
+                data-aos-easing="ease-in-back"
+                data-aos-delay="150"
+                data-aos-offset="0">
                     <img src="images/casual@512.png" alt="">
                 </picture>
-                <picture>
+                <picture data-aos="fade-zoom-in"
+                data-aos-easing="ease-in-back"
+                data-aos-delay="150"
+                data-aos-offset="0">
                     <img src="images/casual@512.png" alt="">
                 </picture>
             </div>
@@ -579,33 +635,55 @@
         </div>  
     </section>
 
-    <section class="container1420 card__news">
-        <h2> Message us if you have any doubts! </h2>
-        <form action="" method="POST">
-                <label for="dropdown"> Subject: </label>
-                <select name="dropdown">
+    <section class="container1420 card__news" id="buttons-anchor">
+        <div class="footer__logo">
+            <a href="/"><img src="icons/KDA_logo.png" alt=""></a>
+        </div>   
+        <h3> Message us if you have any doubts! </h3>
+
+        <form class="form" action="submission.html" method="POST">
+            <section>
+                <label for="dropdown" class="label__title"> Subject: </label>
+                <select name="dropdown" class="lable__answer">
                     <option value="Instructors">Instructors</option>
                     <option value="Styles">Dance Styles</option>
                     <option value="Styles">Studios</option>
                     <option value="Styles">Schedule</option>
                     <option value="Styles">Trial lesson</option>
                 </select>
+            </section>
             <hr>
-                <label for="text"> Name </label>
-                <input type="text" name="name" required maxlength="30">
+            <section>    
+                <label for="text" class="label__title"> Name: </label>
+                <input class="lable__answer" type="text" name="name" required maxlength="30">
+            </section>
             <hr>
-                <label for="num"> Phone Number </label>
-                <input type="number" name="phonenumber" required minlength="5" maxlength="13">
+            <section>
+                <label for="num" class="label__title"> Phone Number: </label>
+                <input class="lable__answer" type="number" name="phonenumber" required minlength="5" maxlength="13">
+            </section>
             <hr>
-                <label for="radio"> Select one of the following if you wish to be contacted by text: </label>
+            <section>
+                <label for="radio" class="label__title"> Select one of the following if you wish to be contacted by text: </label>
+                <br>
                     <input type="radio" name="radio" value="email">
-                <label for="Email">Email</label>
+                <label for="Email" class="lable__answer">Email</label>
                     <input type="radio" name="radio" value="line">
-                <label for="Line">Line</label>
+                <label for="Line" class="lable__answer">Line</label>
                     <input type="radio" name="radio" value="whatsapp">
-                <label for="whatsapp">Whatsapp</label>
+                <label for="whatsapp" class="lable__answer">Whatsapp</label>
+            </section>
             <hr>
-                <input type="submit" value="Submit and we will send you the pdf file">
+            <section class="extra-info">
+                <label for="extra" class="label__title">Tell us about your doubts</label>
+                <br>
+                <textarea class="lable__answer" id="extra" name="extra" rows="3" cols="40" ></textarea>
+            </section>
+            <hr>
+            <section>
+                <input type="submit" value="Submit to request the pdf file">
+            </section>
+            <hr>
         </form>
     </section>
 
@@ -689,5 +767,9 @@
         </div> <!-- inner container1420 -->
     </footer> <!-- outer container -->
     <script src="main.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 </body>
 </html>
