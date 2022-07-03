@@ -21,14 +21,14 @@
         <a href="/"><img src="icons/KDA_logo.png" alt=""></a> <!-- forward slash on href= is the root of the website -->
         <span class="material-icons icon-small icon--white nav__toggler"> menu </span>
         <ul class="list nav__list collapsible__content">
-            <li class="nav__item"><a href="#">Start Here/Plans</a></li>
-            <li class="nav__item"><a href="#">Schedule</a></li>
-            <li class="nav__item"><a href="#">Styles</a></li>
-            <li class="nav__item"><a href="#">Studios</a></li>
-            <li class="nav__item"><a href="#">Recruit</a></li>
-            <li class="nav__item"><a href="#">Pictures</a></li>
+            <li class="nav__item"><a href="#section__plans">Start Here/Plans</a></li>
+            <li class="nav__item"><a href="#section__styles">Schedule</a></li>
+            <li class="nav__item"><a href="#section__styles">Styles</a></li>
+            <li class="nav__item"><a href="#section__studios">Studios</a></li>
+            <li class="nav__item"><a href="#buttons-anchor">Recruit</a></li>
+            <li class="nav__item"><a href="#section__pictures">Pictures</a></li>
             <li class="nav__item">
-                <a href="kda_index_ENG.html">
+                <a href="#">
                     <span class="material-icons"> language </span>
                     <span> ENG </span>
                 </a>
@@ -113,7 +113,7 @@
     </section>
 
 
-    <section class="block block--point-down ">
+    <section class="block block--point-down" id="section__plans">
         <div class="container1420 prices">
 
             <div class="gridouter grid--cols3">
@@ -184,7 +184,7 @@
 
     </section>
 
-    <section class="container1420 card__news">
+    <section class="container1420 card__news" id="section__styles">
         <span class="material-icons icon icon--headings icon-title">schedule</span>
         <h3 class="icon-title">Check out classes' schedule and instructors by styles or studios!</h3>
     </section>    
@@ -480,7 +480,7 @@
         </div>
     </section>
 
-    <section class="container1420 styles-studios collapsible">
+    <section class="container1420 styles-studios collapsible" id="section__studios">
         <div class="styles-studios-collapsible">
             <h3 class="icon-title">Studios</h3>
             <span class="material-icons icon icon-title collapsible__chevron"> keyboard_arrow_right </span>
@@ -589,7 +589,7 @@
         </div>
     </section>
 
-    <section class="container1420 block block--center">
+    <section class="container1420 block block--center" id="section__rental">
         <h4 class="subtitle--shower--rental"> Rental Space </h4>
         <div class="styles-studios__outercontainer">
             <div class="bg__party card--rental grid">
@@ -608,7 +608,7 @@
         </a>
     </section>
 
-    <section class="containerfull gallery__bg gallery">
+    <section class="containerfull gallery__bg gallery" id="section__pictures">
         <div class="container1420 grid grid--rows3">
             <h2 class="subtitle--shower--rental"> Pictures </h2>
             <div class="styles-studios__outercontainer">
@@ -635,14 +635,14 @@
         </div>  
     </section>
 
-    <section class="container1420 card__news" id="buttons-anchor">
+    <section class="form container1420 card__news" id="buttons-anchor">
         <div class="footer__logo">
             <a href="/"><img src="icons/KDA_logo.png" alt=""></a>
         </div>   
         <h3> Message us if you have any doubts! </h3>
 
-        <form class="form" action="submission.html" method="POST">
-            <section>
+        <form action="submission.html" method="POST">
+            <section class="form--line">
                 <label for="dropdown" class="label__title"> Subject: </label>
                 <select name="dropdown" class="lable__answer">
                     <option value="Instructors">Instructors</option>
@@ -653,17 +653,17 @@
                 </select>
             </section>
             <hr>
-            <section>    
+            <section class="form--line">    
                 <label for="text" class="label__title"> Name: </label>
                 <input class="lable__answer" type="text" name="name" required maxlength="30">
             </section>
             <hr>
-            <section>
+            <section class="form--line">
                 <label for="num" class="label__title"> Phone Number: </label>
                 <input class="lable__answer" type="number" name="phonenumber" required minlength="5" maxlength="13">
             </section>
             <hr>
-            <section>
+            <section class="form--line">
                 <label for="radio" class="label__title"> Select one of the following if you wish to be contacted by text: </label>
                 <br>
                     <input type="radio" name="radio" value="email">
@@ -674,16 +674,15 @@
                 <label for="whatsapp" class="lable__answer">Whatsapp</label>
             </section>
             <hr>
-            <section class="extra-info">
+            <section class="extra-info form--line">
                 <label for="extra" class="label__title">Tell us about your doubts</label>
                 <br>
                 <textarea class="lable__answer" id="extra" name="extra" rows="3" cols="40" ></textarea>
             </section>
             <hr>
-            <section>
+            <section class="form--line">
                 <input type="submit" value="Submit to request the pdf file">
             </section>
-            <hr>
         </form>
     </section>
 
@@ -733,7 +732,7 @@
                     </ul>
                 </div>
                 
-                <div class="collapsible  footer__last-col">
+                <div class="collapsible footer__last-col">
                     <div class="collapsible__headerbox">
                         <h3 class="collapsible__h1234 ">Other</h3>
                     </div>

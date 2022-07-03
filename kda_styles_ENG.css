@@ -976,6 +976,21 @@ a:active {
 }
 
 /* ------------------------------------------------------------- */
+/* FORM SECTION */
+.form.container1420 {
+    max-width: 800px;
+    padding: 1rem;
+}
+
+.form h3 {
+    padding: 1rem;
+}
+
+.form--line {
+    padding: .25rem .5rem;
+}
+
+/* ------------------------------------------------------------- */
 /* FOOTER SECTION */
 .footer {
     height: 100%;
@@ -994,10 +1009,15 @@ a:active {
 .footer__lists li {
     padding: .5rem;
     font-size: 1.5rem;
+    w
 }
 
 .footer__last-col li {
     padding: 1rem 0;
+}
+
+.footer .icon-container{
+    background-color: var(--color-4-headings);
 }
 
 @media screen and (min-width: 1024px) {
